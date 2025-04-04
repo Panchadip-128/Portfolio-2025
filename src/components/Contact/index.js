@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { Snackbar } from "@mui/material";
 
 const Container = styled.div`
   display: flex;
@@ -116,9 +115,19 @@ const ContactButton = styled.input`
   cursor: pointer;
 `;
 
+const AlertBox = styled.div`
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: ${({ success }) => (success ? "green" : "red")};
+  text-align: center;
+`;
+
 const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const [error, setError] = useState(null);
+  const [alert, setAlert] = useState(null); // State for success/error message
   const form = useRef();
 
   const handleSubmit = async (e) => {
@@ -131,7 +140,7 @@ const Contact = () => {
     const message = formData.get("message");
 
     if (!fromEmail || !fromName || !subject || !message) {
-      setError("All fields are required.");
+      setAlert({ message: "All fields are required.", success: false });
       return;
     }
 
@@ -157,14 +166,17 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setOpen(true);
+        setAlert({ message: "Email sent successfully!", success: true });
         form.current.reset();
       } else {
-        setError("Failed to send email. Please try again.");
+        setAlert({ message: "Failed to send email. Please try again.", success: false });
       }
     } catch (error) {
-      setError("An error occurred while sending the email.");
+      setAlert({ message: "An error occurred while sending the email.", success: false });
     }
+
+    // Clear the alert after 6 seconds
+    setTimeout(() => setAlert(null), 6000);
   };
 
   return (
@@ -181,41 +193,8 @@ const Contact = () => {
           <ContactButton type="submit" value="Send" />
         </ContactForm>
 
-        {/* Success Snackbar */}
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          ContentProps={{
-            sx: {
-              backgroundColor: "green",
-              color: "white",
-              fontSize: "16px",
-              fontWeight: "bold",
-            },
-          }}
-        />
-
-        {/* Error Snackbar */}
-        {error && (
-          <Snackbar
-            open={!!error}
-            autoHideDuration={6000}
-            onClose={() => setError(null)}
-            message={error}
-            anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            ContentProps={{
-              sx: {
-                backgroundColor: "red",
-                color: "white",
-                fontSize: "16px",
-                fontWeight: "bold",
-              },
-            }}
-          />
-        )}
+        {/* Alert Box */}
+        {alert && <AlertBox success={alert.success}>{alert.message}</AlertBox>}
       </Wrapper>
     </Container>
   );
