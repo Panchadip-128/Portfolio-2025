@@ -92,12 +92,18 @@ const Card = styled.div`
   a {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: ${({ theme }) => theme.accent || '#00aaff'};
+    color: white; /* White text */
+    background-color: red; /* Red background */
     text-decoration: none;
     font-weight: 500;
+    padding: 0.5rem 1rem; /* Add padding to make it look like a button */
+    border-radius: 8px; /* Rounded corners */
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: center;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      text-decoration: underline;
+      background-color: darkred; /* Darker red on hover */
     }
   }
 `;
