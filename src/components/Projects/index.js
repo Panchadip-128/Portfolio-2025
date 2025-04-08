@@ -12,7 +12,7 @@ const Projects = ({openModal,setOpenModal}) => {
       <Wrapper>
         <Title>Projects</Title>
         <Desc>
-          I have worked on a wide range of projects. From web apps to Cyber Security. Here are some of my projects.
+          I have worked on a wide range of projects. From Full Stack Webapps to Machine Learning. Here are some of my projects.
         </Desc>
         <ToggleButtonGroup >
           {toggle === 'all' ?
@@ -26,12 +26,12 @@ const Projects = ({openModal,setOpenModal}) => {
             :
             <ToggleButton value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
           }
-          <Divider />
+          {/* <Divider />
           {toggle === 'Cyber Security' ?
             <ToggleButton active value="Cyber Security" onClick={() => setToggle('Cyber Security')}>Cyber Security</ToggleButton>
             :
             <ToggleButton value="Cyber Security" onClick={() => setToggle('Cyber Security')}>Cyber Security</ToggleButton>
-          }
+          } */}
           <Divider />
           {toggle === 'machine learning' ?
             <ToggleButton active value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
