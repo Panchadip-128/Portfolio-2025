@@ -694,17 +694,59 @@ export const certifications = [
     title: "AI-900: Microsoft Azure AI Fundamentals",
     issuer: "Microsoft",
     date: "Aug 2024",
-    link: "https://example.com",
-    description: "Covers basic concepts of AI and ML on Azure platform including use cases, services, and responsible AI."
+    link: "https://learn.microsoft.com/en-us/users/panchadipbhattacharjee-5589/credentials/61b3492e88649291?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+    description: "Covers all concepts of AI and ML on Azure platform including use cases, services, and responsible AI."
   },
   {
-    title: "Deep Learning Specialization",
+    title: "Deep Learning Specialization-Neural Networks & DL",
     issuer: "DeepLearning.AI",
-    date: "May 2024",
-    link: "https://coursera.org/verify/XYZ",
-     description: "Covers basic concepts of AI and ML on Azure platform including use cases, services, and responsible AI."
+    date: "Dec 2024",
+    link: "https://www.coursera.org/account/accomplishments/verify/6TH76LKY7ZTS",
+     description: "Completed the Deep Learning Specialization by DeepLearning.AI, covering neural networks, backpropagation, TensorFlow, Keras, convolutional networks, sequence models, and optimization techniques with hands-on experience in building and deploying models."
   },
-  // Add more if needed
+  {
+    title: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+    issuer: "DeepLearning.AI",
+    date: "April 2025",
+    link: "https://www.coursera.org/account/accomplishments/verify/JUVJ1ALD6JUD",
+    description: "Completed the Improving Deep Neural Networks course by DeepLearning.AI, covering hyperparameter tuning, regularization, optimization strategies, and TensorFlow applications. Gained expertise in mathematical optimization, machine learning, and deep neural networks."
+  },
+
+  {
+    title: "Generative AI with LLMs",
+    issuer: "DeepLearning.AI",
+    date: "October 2024",
+    link: "https://www.coursera.org/account/accomplishments/verify/J94VZAY77EFX",
+    description: "Gained practical knowledge of generative AI, exploring its applications in creating business value. Learned from AWS AI experts about deploying AI in real-world use cases and leveraging cutting-edge generative AI technologies."
+  },
+
+  {
+    title: "Generative AI and Prompt Engineering techniques",
+    issuer: "IBM",
+    date: "Jun 2024",
+    link: "https://www.coursera.org/account/accomplishments/verify/C7XTPDSF3FFL",
+    description: "Learned the fundamentals of prompt engineering in generative AI, including creating effective prompts, applying best practices, and using tools to refine prompts for better performance. Gained skills to craft precise inputs for achieving desired outputs in various AI applications."
+  },
+
+  {
+    title: "Gen AI: Introduction and Applications",
+    issuer: "IBM",
+    date: "Jun 2024",
+    link: "https://www.coursera.org/account/accomplishments/verify/V4W628F4C8FW",
+    description: "In this course, learners explored generative AI and how it differs from discriminative AI. The course covered the capabilities of generative AI in creating content like text, images, code, and music. It also discussed real-world applications of generative AI across industries such as healthcare, entertainment, and software development."
+  },
+
+  {
+    title: "Data Analytics: Ask Questions to make data driven decisions",
+    issuer: "Google in Coursera",
+    date: "Nov 2023",
+    link: "https://www.coursera.org/account/accomplishments/verify/AJ92TYAMX74T",
+    description: "This course covers the fundamentals of data analytics, including data types, data collection methods, and data analysis techniques. It emphasizes the importance of asking the right questions to make informed decisions based on data insights. "
+  },
+
+
+
+  
 ];
 
 export const TimeLineData = [

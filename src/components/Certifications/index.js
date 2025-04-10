@@ -38,10 +38,14 @@ const ScrollArea = styled.div`
 const ScrollContainer = styled.div`
   display: flex;
   width: max-content;
-  animation: ${scrollLeft} 15s linear infinite;
+  animation: ${scrollLeft} 30s linear infinite; /* Slower animation (30s) */
 
   &:hover {
-    animation-play-state: paused;
+    animation-play-state: paused; /* Pause animation on hover */
+  }
+
+  &.paused {
+    animation-play-state: paused; /* Pause animation when class is added */
   }
 `;
 
@@ -119,10 +123,12 @@ const SectionTitle = styled.h2`
 const CertificationCarousel = () => {
   const scrollRef = useRef(null);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isPaused, setIsPaused] = useState(false); // State to track animation pause
   const doubledCerts = [...certifications, ...certifications];
 
   const handleCardClick = (index) => {
     setExpandedIndex((prev) => (prev === index ? null : index));
+    setIsPaused(true); // Pause animation on card click
   };
 
   useEffect(() => {
@@ -136,19 +142,19 @@ const CertificationCarousel = () => {
       scrollContainer.classList.add('active');
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
-      scrollContainer.style.animationPlayState = 'paused';
+      setIsPaused(true); // Pause animation on mouse down
     };
 
     const handleMouseLeave = () => {
       isDown = false;
       scrollContainer.classList.remove('active');
-      scrollContainer.style.animationPlayState = 'running';
+      setIsPaused(false); // Resume animation on mouse leave
     };
 
     const handleMouseUp = () => {
       isDown = false;
       scrollContainer.classList.remove('active');
-      scrollContainer.style.animationPlayState = 'running';
+      setIsPaused(false); // Resume animation on mouse up
     };
 
     const handleMouseMove = (e) => {
@@ -166,7 +172,7 @@ const CertificationCarousel = () => {
     const handleTouchStart = (e) => {
       startTouchX = e.touches[0].pageX;
       startScrollLeftTouch = scrollContainer.scrollLeft;
-      scrollContainer.style.animationPlayState = 'paused';
+      setIsPaused(true); // Pause animation on touch start
     };
 
     const handleTouchMove = (e) => {
@@ -176,7 +182,7 @@ const CertificationCarousel = () => {
     };
 
     const handleTouchEnd = () => {
-      scrollContainer.style.animationPlayState = 'running';
+      setIsPaused(false); // Resume animation on touch end
     };
 
     scrollContainer.addEventListener('mousedown', handleMouseDown);
@@ -203,7 +209,10 @@ const CertificationCarousel = () => {
     <CarouselWrapper>
       <SectionTitle>Certifications</SectionTitle>
       <ScrollArea>
-        <ScrollContainer ref={scrollRef}>
+        <ScrollContainer
+          ref={scrollRef}
+          className={isPaused ? 'paused' : ''} // Add 'paused' class when animation is paused
+        >
           {doubledCerts.map((cert, index) => (
             <Card
               key={index}
