@@ -130,48 +130,33 @@ const NeonButton = styled.a`
   text-align: center;
   border-radius: 8px;
   background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Neon gradient */
-  background-size: 300%;
-  animation: neonBackground 6s linear infinite; /* Smooth background animation */
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  border: none;
-  cursor: pointer;
+  background-size: 300%; /* Larger size for smooth animation */
+  animation: neonBackground 6s linear infinite; /* Animate the gradient */
+  box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0; /* Initial shadow */
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #fff;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-    border-radius: 12px; /* Slightly larger radius for the shadow */
-    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Same gradient as the button */
-    background-size: 300%;
-    animation: neonShadow 6s linear infinite; /* Smooth shadow animation */
-    filter: blur(8px); /* Add blur to create a glowing effect */
+    box-shadow: 0 0 15px #ff0080, 0 0 25px #ff8c00, 0 0 35px #40e0d0; /* Stronger glow on hover */
   }
 
   @keyframes neonBackground {
     0% {
       background-position: 0%;
+      box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0;
+    }
+    25% {
+      box-shadow: 0 0 15px #ff8c00, 0 0 25px #40e0d0, 0 0 35px #ff0080;
+    }
+    50% {
+      background-position: 100%;
+      box-shadow: 0 0 10px #40e0d0, 0 0 20px #ff0080, 0 0 30px #ff8c00;
+    }
+    75% {
+      box-shadow: 0 0 15px #ff0080, 0 0 25px #ff8c00, 0 0 35px #40e0d0;
     }
     100% {
-      background-position: 200%;
-    }
-  }
-
-  @keyframes neonShadow {
-    0% {
       background-position: 0%;
-    }
-    100% {
-      background-position: 200%;
+      box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0;
     }
   }
 `;
@@ -291,7 +276,7 @@ const CertificationCarousel = () => {
         </ScrollContainer>
       </ScrollArea>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-      <NeonButton href="mailto:panchadip125@gmail.com">Want to collaborate on a Project?</NeonButton>
+        <NeonButton href="#">Collaborate on a Pro Trial</NeonButton>
       </div>
     </CarouselWrapper>
   );
