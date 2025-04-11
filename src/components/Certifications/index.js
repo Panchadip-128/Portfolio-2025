@@ -38,14 +38,14 @@ const ScrollArea = styled.div`
 const ScrollContainer = styled.div`
   display: flex;
   width: max-content;
-  animation: ${scrollLeft} 30s linear infinite; /* Slower animation (30s) */
+  animation: ${scrollLeft} 30s linear infinite;
 
   &:hover {
-    animation-play-state: paused; /* Pause animation on hover */
+    animation-play-state: paused;
   }
 
   &.paused {
-    animation-play-state: paused; /* Pause animation when class is added */
+    animation-play-state: paused;
   }
 `;
 
@@ -96,18 +96,18 @@ const Card = styled.div`
   a {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: white; /* White text */
-    background-color: red; /* Red background */
+    color: white;
+    background-color: red;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem; /* Add padding to make it look like a button */
-    border-radius: 8px; /* Rounded corners */
-    display: inline-block; /* Ensure it behaves like a button */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
     text-align: center;
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: darkred; /* Darker red on hover */
+      background-color: darkred;
     }
   }
 `;
@@ -122,45 +122,75 @@ const SectionTitle = styled.h2`
 
 const NeonButton = styled.a`
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
+  color: #ffffff;
+  background-color: #111;
+  border: 2px solid transparent;
   border-radius: 8px;
-  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Neon gradient */
-  background-size: 300%; /* Larger size for smooth animation */
-  animation: neonBackground 6s linear infinite; /* Animate the gradient */
-  box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0; /* Neon shadow */
-  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
 
-  &:hover {
-    box-shadow: 0 0 15px #ff0080, 0 0 25px #ff8c00, 0 0 35px #40e0d0; /* Stronger glow on hover */
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff004f, #ff8c00, #00ffc6, #0077ff, #ff004f);
+    background-size: 400% 400%;
+    animation: gradientShift 8s linear infinite;
+    z-index: -1;
+    opacity: 1;
   }
 
-  @keyframes neonBackground {
+  &:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    z-index: -2;
+    background: inherit;
+    filter: blur(3px);
+    opacity: 0.6;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #fff;
+  }
+
+  @keyframes gradientShift {
     0% {
-      background-position: 0%;
+      background-position: 0% 50%;
     }
     50% {
-      background-position: 100%;
+      background-position: 100% 50%;
     }
     100% {
-      background-position: 0%;
+      background-position: 0% 50%;
     }
   }
 `;
 
+
 const CertificationCarousel = () => {
   const scrollRef = useRef(null);
   const [expandedIndex, setExpandedIndex] = useState(null);
-  const [isPaused, setIsPaused] = useState(false); // State to track animation pause
+  const [isPaused, setIsPaused] = useState(false);
   const doubledCerts = [...certifications, ...certifications];
 
   const handleCardClick = (index) => {
     setExpandedIndex((prev) => (prev === index ? null : index));
-    setIsPaused(true); // Pause animation on card click
+    setIsPaused(true);
   };
 
   useEffect(() => {
@@ -174,19 +204,19 @@ const CertificationCarousel = () => {
       scrollContainer.classList.add('active');
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
-      setIsPaused(true); // Pause animation on mouse down
+      setIsPaused(true);
     };
 
     const handleMouseLeave = () => {
       isDown = false;
       scrollContainer.classList.remove('active');
-      setIsPaused(false); // Resume animation on mouse leave
+      setIsPaused(false);
     };
 
     const handleMouseUp = () => {
       isDown = false;
       scrollContainer.classList.remove('active');
-      setIsPaused(false); // Resume animation on mouse up
+      setIsPaused(false);
     };
 
     const handleMouseMove = (e) => {
@@ -197,14 +227,14 @@ const CertificationCarousel = () => {
       scrollContainer.scrollLeft = scrollLeft - walk;
     };
 
-    // Touch support
+    // Touch events
     let startTouchX = 0;
     let startScrollLeftTouch = 0;
 
     const handleTouchStart = (e) => {
       startTouchX = e.touches[0].pageX;
       startScrollLeftTouch = scrollContainer.scrollLeft;
-      setIsPaused(true); // Pause animation on touch start
+      setIsPaused(true);
     };
 
     const handleTouchMove = (e) => {
@@ -214,7 +244,7 @@ const CertificationCarousel = () => {
     };
 
     const handleTouchEnd = () => {
-      setIsPaused(false); // Resume animation on touch end
+      setIsPaused(false);
     };
 
     scrollContainer.addEventListener('mousedown', handleMouseDown);
@@ -243,7 +273,7 @@ const CertificationCarousel = () => {
       <ScrollArea>
         <ScrollContainer
           ref={scrollRef}
-          className={isPaused ? 'paused' : ''} // Add 'paused' class when animation is paused
+          className={isPaused ? 'paused' : ''}
         >
           {doubledCerts.map((cert, index) => (
             <Card
@@ -267,7 +297,7 @@ const CertificationCarousel = () => {
         </ScrollContainer>
       </ScrollArea>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        {/* <NeonButton href="#">Collaborate on a Pro Trial</NeonButton> */}
+        <NeonButton href="#collaborate">Collaborate on a Project?</NeonButton>
       </div>
     </CarouselWrapper>
   );
