@@ -132,7 +132,7 @@ const NeonButton = styled.a`
   background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Neon gradient */
   background-size: 300%; /* Larger size for smooth animation */
   animation: neonBackground 6s linear infinite; /* Animate the gradient */
-  box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0; /* Initial shadow */
+  box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0; /* Neon shadow */
   transition: all 0.3s ease;
 
   &:hover {
@@ -142,21 +142,12 @@ const NeonButton = styled.a`
   @keyframes neonBackground {
     0% {
       background-position: 0%;
-      box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0;
-    }
-    25% {
-      box-shadow: 0 0 15px #ff8c00, 0 0 25px #40e0d0, 0 0 35px #ff0080;
     }
     50% {
       background-position: 100%;
-      box-shadow: 0 0 10px #40e0d0, 0 0 20px #ff0080, 0 0 30px #ff8c00;
-    }
-    75% {
-      box-shadow: 0 0 15px #ff0080, 0 0 25px #ff8c00, 0 0 35px #40e0d0;
     }
     100% {
       background-position: 0%;
-      box-shadow: 0 0 10px #ff0080, 0 0 20px #ff8c00, 0 0 30px #40e0d0;
     }
   }
 `;
@@ -276,7 +267,7 @@ const CertificationCarousel = () => {
         </ScrollContainer>
       </ScrollArea>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <NeonButton href="#">Collaborate on a Pro Trial</NeonButton>
+        {/* <NeonButton href="#">Collaborate on a Pro Trial</NeonButton> */}
       </div>
     </CarouselWrapper>
   );
