@@ -154,32 +154,45 @@ const ButtonGroup = styled.div`
     gap: 12px;
 `;
 
+
+
 const Button = styled.a`
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: ${({ theme }) => theme.text_primary};
-    padding: 12px 16px;
-    border-radius: 8px;
-    background-color:red};
-    ${({ dull, theme }) => dull && `
-        background-color: ${theme.bgLight};
-        color: ${theme.text_secondary};
-        &:hover {
-            background-color: yellow;
-        }
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: red;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: red;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.5s ease;
+
+  ${({ dull, theme }) =>
+    dull &&
+    `
+      background-color: red;
+      color: white;
+      &:hover {
+        background-color: yellow;
+      }
     `}
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.5s ease;
-    &:hover {
-        background-color: ${({ theme }) => theme.primary + 99};
-    }
-    @media only screen and (max-width: 600px) {
-        font-size: 12px;
-    }
+
+  &:hover {
+    ${({ dull, theme }) =>
+      !dull &&
+      `
+        background-color: ${theme.primary}99;
+      `}
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
+
+
 
 
 const index = ({ openModal, setOpenModal }) => {
