@@ -283,7 +283,7 @@ const CertificationCarousel = () => {
         </ScrollContainer>
       </ScrollArea>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <NeonButton href="#collaborate">Collaborate on a Project?</NeonButton>
+        <NeonButton href="mailto:panchadip125@gmail.com">Collaborate on a Project?</NeonButton>
       </div>
     </CarouselWrapper>
   );
