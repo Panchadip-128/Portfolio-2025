@@ -120,6 +120,62 @@ const SectionTitle = styled.h2`
   margin-bottom: 2rem;
 `;
 
+const NeonButton = styled.a`
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Neon gradient */
+  background-size: 300%; /* Larger size for smooth animation */
+  animation: neonBackground 6s linear infinite; /* Animate the gradient */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust to create space for the shadow */
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    border-radius: 12px; /* Slightly rounded corners for the shadow */
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080); /* Neon gradient */
+    background-size: 300%;
+    animation: neonShadow 6s linear infinite; /* Animate the shadow */
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5); /* Subtle glow for depth */
+  }
+
+  @keyframes neonBackground {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  @keyframes neonShadow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+`;
+
 const CertificationCarousel = () => {
   const scrollRef = useRef(null);
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -234,6 +290,9 @@ const CertificationCarousel = () => {
           ))}
         </ScrollContainer>
       </ScrollArea>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+      <NeonButton href="mailto:panchadip125@gmail.com">Want to collaborate on a Project?</NeonButton>
+      </div>
     </CarouselWrapper>
   );
 };

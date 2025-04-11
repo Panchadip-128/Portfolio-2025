@@ -709,7 +709,7 @@ export const certifications = [
     issuer: "DeepLearning.AI",
     date: "April 2025",
     link: "https://www.coursera.org/account/accomplishments/verify/JUVJ1ALD6JUD",
-    description: "Completed the Improving Deep Neural Networks course by DeepLearning.AI, covering hyperparameter tuning, regularization, optimization strategies, and TensorFlow applications. Gained expertise in mathematical optimization, machine learning, and deep neural networks."
+    description: "Completed the Improving Deep Neural Networks course by DeepLearning.AI, covering hyperparameter tuning, regularization"
   },
 
   {
