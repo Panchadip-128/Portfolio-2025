@@ -127,7 +127,7 @@ const Card = styled.div`
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: darkred;
+      background-color:rgb(65, 2, 34); /* Neon color on hover */
     }
   }
 `;
