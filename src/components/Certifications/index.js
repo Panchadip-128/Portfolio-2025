@@ -127,57 +127,43 @@ const NeonButton = styled.a`
   font-weight: 600;
   color: #ffffff;
   background-color: #111;
-  border: 2px solid transparent;
   border-radius: 8px;
   position: relative;
   text-decoration: none;
   z-index: 1;
-  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 
   &:before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 8px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 10px;
     background: linear-gradient(90deg, #ff004f, #ff8c00, #00ffc6, #0077ff, #ff004f);
-    background-size: 400% 400%;
-    animation: gradientShift 8s linear infinite;
+    background-size: 100% 100%;
     z-index: -1;
-    opacity: 1;
+    filter: blur(2px);
+    opacity: 0.8;
   }
 
   &:after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 8px;
-    z-index: -2;
-    background: inherit;
-    filter: blur(3px);
-    opacity: 0.6;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 6px;
+    background-color: #111;
+    z-index: -1;
   }
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px #fff;
-  }
-
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    box-shadow: 0 0 12px rgba(6, 69, 170, 0.91);
   }
 `;
 
