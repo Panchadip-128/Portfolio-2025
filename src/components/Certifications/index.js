@@ -98,6 +98,11 @@ const Card = styled.div`
   &:hover {
     transform: ${({ expanded }) =>
       expanded ? 'scale(1.05)' : 'scale(1.03)'};
+      
+  }
+
+   &:hover::after {
+    background-color:rgb(60, 0, 52); /* Deep navy when hovered */
   }
 
   h3 {
@@ -127,7 +132,7 @@ const Card = styled.div`
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color:rgb(65, 2, 34); /* Neon color on hover */
+      background-color:rgb(50, 1, 49); /* Neon color on hover */
     }
   }
 `;
