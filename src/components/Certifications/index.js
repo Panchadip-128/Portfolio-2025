@@ -54,30 +54,50 @@ const Card = styled.div`
   min-width: 240px;
   height: ${({ expanded }) => (expanded ? 'auto' : '250px')};
   margin: 1rem;
-  background: rgba(30, 30, 30, 0.85);
-  backdrop-filter: blur(12px);
+  background-color: #111827; /* Solid professional background */
   border-radius: 20px;
-  border: ${({ expanded }) =>
-    expanded ? '2px solid #0ff' : '1px solid rgb(232, 252, 12)'};
-  box-shadow: ${({ expanded }) =>
-    expanded
-      ? '0 0 16px #0fe'
-      : '0 0 2px rgba(225, 255, 0, 0.88), 0 0 4px rgba(255, 0, 0, 0.2)'};
   padding: 1.9rem;
   color: ${({ theme }) => theme.text || '#f0f0f0'};
   cursor: pointer;
-  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: ${({ expanded }) => (expanded ? 'scale(1.05)' : 'scale(1)')};
   z-index: ${({ expanded }) => (expanded ? 10 : 1)};
   position: relative;
+  overflow: hidden;
+
+  /* Neon Border */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #ff004f, #ff8c00, #00ffc6, #0077ff, #ff004f);
+    z-index: -2;
+    filter: blur(2px);
+    opacity: 0.9;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 18px;
+    background-color: #111827; /* Solid again to mask internal glow */
+    z-index: -1;
+  }
 
   &:hover {
     transform: ${({ expanded }) =>
       expanded ? 'scale(1.05)' : 'scale(1.03)'};
-    background-color: rgb(35, 35, 82);
   }
 
   h3 {
@@ -111,6 +131,7 @@ const Card = styled.div`
     }
   }
 `;
+
 
 const SectionTitle = styled.h2`
   font-size: 2rem;
