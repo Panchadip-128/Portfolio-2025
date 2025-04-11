@@ -130,8 +130,8 @@ const NeonButton = styled.a`
   text-align: center;
   border-radius: 8px;
   background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0); /* Neon gradient */
-  background-size: 300%; /* Larger size for smooth animation */
-  animation: neonBackground 6s linear infinite; /* Animate the gradient */
+  background-size: 300%;
+  animation: neonBackground 10s linear infinite; /* Slower animation */
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -145,16 +145,15 @@ const NeonButton = styled.a`
   &::before {
     content: '';
     position: absolute;
-    top: -5px; /* Adjust to create space for the shadow */
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: -1;
-    border-radius: 12px; /* Slightly rounded corners for the shadow */
-    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080); /* Neon gradient */
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0);
     background-size: 300%;
-    animation: neonShadow 6s linear infinite; /* Animate the shadow */
-    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5); /* Subtle glow for depth */
+    animation: neonShadow 10s linear infinite; /* Smooth shadow animation */
   }
 
   @keyframes neonBackground {
