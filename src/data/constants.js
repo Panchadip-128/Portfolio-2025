@@ -17,7 +17,16 @@ import neura_ai_logo from '../images/neura_ai.png';
 import RL_Logo from '../images/RL.png';
 import deepfake from '../images/deepfake.png';
 import tech_img from '../images/tech_img.png';
-import vqa_img from '../images/vqa.png'
+import vqa_img from '../images/vqa.png';
+import hero_img from '../images/HeroImage.jpg';
+import express_logo from '../images/express.png';
+import langchain_logo from '../images/langchain.png';
+import fastapi_logo from '../images/fastapi.png';
+import postman_logo from '../images/postman.png';
+import figma from '../images/figma.png';
+import git from '../images/git.png';
+import canva from '../images/canva.png';
+
 
 
 export const Bio = {
@@ -101,7 +110,7 @@ export const skills = [
       },
       {
         name: "Express Js",
-        image: "data:image/png;base64,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",
+        image: express_logo,
       },
       {
         name: "Graph Ql",
@@ -166,12 +175,12 @@ export const skills = [
     image:"https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
     },{
     name: "LangChain",
-    image:"https://upload.wikimedia.org/wikipedia/commons/8/89/LangChain_logo.png",
+    image:langchain_logo,
     },
     {
     name: "FastAPI",
     image:
-    "https://upload.wikimedia.org/wikipedia/commons/8/80/FastAPI_logo.svg",
+    fastapi_logo,
       },
       
     ],
@@ -182,7 +191,7 @@ export const skills = [
       {
         name: "Git",
         image:
-          "https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667",
+          git,
       },
       {
         name: "GitHub",
@@ -207,17 +216,17 @@ export const skills = [
       {
         name: "Postman",
         image:
-          "https://camo.githubusercontent.com/93b32389bf746009ca2370de7fe06c3b5146f4c99d99df65994f9ced0ba41685/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676574706f73746d616e2f676574706f73746d616e2d69636f6e2e737667",
+         postman_logo,
       },
       {
-        name: "Adobe XD",
+        name: "Canva",
         image:
-          "https://camo.githubusercontent.com/c205ecbe12500177d102169d97bc1c17c545155fdf5ec78c08d54ac53e5b38c1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f61646f62652d78642e737667",
+          canva,
       },
       {
         name: "Figma",
         image:
-          "https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667",
+          figma,
       },
     ],
   },
@@ -526,7 +535,7 @@ export const projects = [
     member: [
       {
         name: "Panchadip",
-        img: "https://media.licdn.com/dms/image/D5603AQHvzXx1kvHuQg/profile-displayphoto-shrink_400_400/0/1686993673179?e=1699488000&v=beta&t=XrXVEkgwxpI8RcIiEoTWw-zqO5pXwWGh0-2VeGHpD68",
+        img: hero_img,
         linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
         github: "https://github.com/Panchadip-128",
       },
@@ -548,7 +557,7 @@ export const projects = [
     member: [
       {
         name: "Panchadip",
-        img: "https://media.licdn.com/dms/image/D5603AQHvzXx1kvHuQg/profile-displayphoto-shrink_400_400/0/1686993673179?e=1699488000&v=beta&t=XrXVEkgwxpI8RcIiEoTWw-zqO5pXwWGh0-2VeGHpD68",
+        img: hero_img,
         linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
         github: "https://github.com/Panchadip-128",
       },
@@ -571,7 +580,7 @@ export const projects = [
     member: [
       {
         name: "Panchadip",
-        img: "https://media.licdn.com/dms/image/D5603AQHvzXx1kvHuQg/profile-displayphoto-shrink_400_400/0/1686993673179?e=1699488000&v=beta&t=XrXVEkgwxpI8RcIiEoTWw-zqO5pXwWGh0-2VeGHpD68",
+        img: hero_img,
         linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
         github: "https://github.com/Panchadip-128",
       },
@@ -592,7 +601,7 @@ export const projects = [
     member: [
       {
         name: "Panchadip",
-        img: "https://media.licdn.com/dms/image/D5603AQHvzXx1kvHuQg/profile-displayphoto-shrink_400_400/0/1686993673179?e=1699488000&v=beta&t=XrXVEkgwxpI8RcIiEoTWw-zqO5pXwWGh0-2VeGHpD68",
+        img: hero_img,
         linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
         github: "https://github.com/Panchadip-128",
       },
@@ -679,7 +688,7 @@ export const projects = [
     member: [
       {
         name: "Panchadip",
-        img: "https://media.licdn.com/dms/image/D5603AQHvzXx1kvHuQg/profile-displayphoto-shrink_400_400/0/1686993673179?e=1699488000&v=beta&t=XrXVEkgwxpI8RcIiEoTWw-zqO5pXwWGh0-2VeGHpD68",
+        img: hero_img,
         linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
         github: "https://github.com/Panchadip-128",
       },
