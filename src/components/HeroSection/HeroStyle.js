@@ -1,21 +1,32 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 import _default from "../../themes/default";
 
 export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.card_light};
+  background: 
+    radial-gradient(circle at 15% 10%, rgba(120, 30, 200, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(0, 150, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(255, 0, 150, 0.15) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(15, 10, 35, 1) 0%, rgba(9, 9, 14, 1) 100%);
   display: flex;
   justify-content: center;
   position: relative;
-  padding: 80px 30px;
+  padding: 80px 30px 250px 30px;
   @media (max-width: 960px) {
-    padding: 66px 16px;
+    padding: 66px 16px 200px 16px;
   }
-  @media (max-width: 640) {
-    padding: 32px 16px;
+  @media (max-width: 640px) {
+    padding: 32px 16px 150px 16px;
   }
-  z-index: 1;
+  z-index: 2;
 
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 70% 75%, 0 100%);
+  @media (max-width: 960px) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 70% 85%, 0 100%);
+  }
+  @media (max-width: 640px) {
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 70% 90%, 0 100%);
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -54,7 +65,7 @@ export const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
-export const HeroLeftContainer = styled.div`
+export const HeroLeftContainer = styled(motion.div)`
   width: 100%;
   order: 1;
   @media (max-width: 960px) {
@@ -74,7 +85,7 @@ export const HeroLeftContainer = styled.div`
   }
 `;
 
-export const HeroRightContainer = styled.div`
+export const HeroRightContainer = styled(motion.div)`
   width: 100%;
   display: flex;
   order: 2;
@@ -92,7 +103,7 @@ export const HeroRightContainer = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled(motion.img)`
   position: relative;
   width: 100%;
   height: 100%;
@@ -112,18 +123,34 @@ export const Img = styled.img`
   }
 `;
 
-export const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+const textGradient = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+
+export const Title = styled(motion.div)`
+  font-weight: 800;
+  font-size: 68px;
+  line-height: 80px;
+  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 50%, #22d3ee 100%);
+  background-size: 200% auto;
+  animation: ${textGradient} 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.8)) drop-shadow(0px 6px 14px rgba(0, 0, 0, 0.8));
+  
   @media (max-width: 960px) {
     text-align: center;
+    font-size: 56px;
+    line-height: 68px;
   }
 
   @media (max-width: 640px) {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 42px;
+    line-height: 52px;
     margin-bottom: 8px;
   }
 `;
@@ -150,7 +177,33 @@ export const Span = styled.span`
   cursor: pointer;
 `;
 
-export const SubTitle = styled.div`
+export const RolesContainer = styled(motion.div)`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
+`;
+
+export const RoleBadge = styled.span`
+  background: linear-gradient(135deg, ${({ theme }) => theme.primary}, #a960ff);
+  color: ${({ theme }) => theme.white};
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px ${({ theme }) => theme.primary + '60'};
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  @media (max-width: 640px) {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+`;
+
+export const SubTitle = styled(motion.div)`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
@@ -181,23 +234,56 @@ export const ResumeButton = styled.a`
     font-size: 20px;
     font-weight: 600;
     transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    box-shadow: 20px 20px 60px #1F2634, -20px -20px 60px #1F2634;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 22px;
+      background: linear-gradient(90deg, #ff004f, #ff8c00, #00ffc6, #0077ff, #ff004f);
+      background-size: 200% 200%;
+      animation: rainbowMove 3s linear infinite;
+      z-index: -2;
+      filter: blur(2px);
+      opacity: 0.9;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: 18px;
+      background-color: #111;
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+    }
+
+    @keyframes rainbowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
+        transform: scale(1.05) translateY(-2px);
+        transition: all 0.4s ease-in-out;
+        color: ${({ theme }) => theme.white};
+        &:before {
+          filter: blur(5px);
+          opacity: 1;
+        }
+        &:after {
+          background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+        }
     }    
-    
     
     @media (max-width: 640px) {
         padding: 12px 0;
         font-size: 18px;
     } 
-
 `;

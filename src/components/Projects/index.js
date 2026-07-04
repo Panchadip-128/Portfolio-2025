@@ -3,10 +3,29 @@ import { useState } from 'react'
 import { Container, Wrapper, Title, Desc, CardContainer, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
 import ProjectCard from '../Cards/ProjectCards'
 import { projects } from '../../data/constants'
+import Marquee from 'react-fast-marquee'
+import styled from 'styled-components'
+
+const MarqueeWrapper = styled.div`
+  width: 100vw;
+  max-width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 20px 0;
+`;
 
 
 const Projects = ({openModal,setOpenModal}) => {
   const [toggle, setToggle] = useState('all');
+  
+  const filteredProjects = toggle === 'all' 
+    ? projects 
+    : projects.filter((item) => item.category === toggle);
+
   return (
     <Container id="projects">
       <Wrapper>
@@ -39,18 +58,37 @@ const Projects = ({openModal,setOpenModal}) => {
             <ToggleButton value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
           }
         </ToggleButtonGroup>
-        <CardContainer>
-          {toggle === 'all' && projects
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-            ))}
-          {projects
-            .filter((item) => item.category == toggle)
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-            ))}
-        </CardContainer>
       </Wrapper>
+      
+      <MarqueeWrapper>
+        {filteredProjects.length > 0 && (
+          <>
+            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="left">
+              {filteredProjects.map((project, index) => (
+                <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                </div>
+              ))}
+            </Marquee>
+
+            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="right">
+              {filteredProjects.map((project, index) => (
+                <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                </div>
+              ))}
+            </Marquee>
+
+            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="left">
+              {filteredProjects.map((project, index) => (
+                <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                </div>
+              ))}
+            </Marquee>
+          </>
+        )}
+      </MarqueeWrapper>
     </Container>
   )
 }

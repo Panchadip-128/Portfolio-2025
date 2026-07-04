@@ -26,7 +26,124 @@ import postman_logo from '../images/postman.png';
 import figma from '../images/figma.png';
 import git from '../images/git.png';
 import canva from '../images/canva.png';
+import vso_logo from '../images/vso_logo.png';
+import kornia_logo from '../images/kornia_logo.png';
+import team_everest_logo from '../images/team_everest_logo.png';
 
+
+import quantum_iot_net from '../images/quantum_iot_net_1783173576574.png';
+import graph_rep_learning from '../images/graph_rep_learning_1783173588629.png';
+import hamp_net_training from '../images/hamp_net_training_1783173600155.png';
+import federated_learning from '../images/federated_learning_1783173610628.png';
+import secure_qr_mcp from '../images/secure_qr_mcp_1783173622312.png';
+import ensemble_ai from '../images/ensemble_ai_1783173633012.png';
+import quantum_blockchain from '../images/quantum_blockchain_1783173642940.png';
+import anomaly_iot from '../images/anomaly_iot_1783173654616.png';
+import phishzero_security from '../images/phishzero_security_1783173665473.png';
+
+
+import amazon_ml_summer_school from '../images/amazon_ml_summer_school_real.png';
+import ieee_conecct_award from '../images/ieee_conecct_award.png';
+import bhtc_poster_award from '../images/bhtc_poster_award.png';
+
+export const recentUpdates = [
+  {
+    id: 1,
+    title: "Amazon ML Summer School 2026",
+    description: "Selected for Amazon ML Summer School consecutively for the second year - 2026 Cohort.",
+    date: "2026-07-04",
+    type: "blog",
+    isNew: true,
+    image: amazon_ml_summer_school,
+    tags: ["Amazon", "Machine Learning", "Summer School"],
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "7 Papers Accepted at IEEE CONECCT",
+    description: "Successfully got 7 research papers accepted at the prestigious IEEE CONECCT conference.",
+    date: "2026-07-03",
+    type: "blog",
+    isNew: true,
+    image: ieee_conecct_award,
+    tags: ["Research", "IEEE CONECCT", "Publications"],
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Best Paper Award at IEEE CONECCT",
+    description: "Honored to receive the Best Paper Award at IEEE CONECCT for outstanding research contributions.",
+    date: "2026-07-02",
+    type: "blog",
+    isNew: true,
+    image: ieee_conecct_award,
+    tags: ["Award", "IEEE", "Research"],
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "Paper Accepted as BHTC Poster",
+    description: "Our research paper has been accepted for a poster presentation at BHTC.",
+    date: "2026-06-25",
+    type: "blog",
+    isNew: true,
+    image: bhtc_poster_award,
+    tags: ["BHTC", "Poster", "Research"],
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Best Poster Award at BHTC",
+    description: "Won the Best Poster Award at BHTC for our accepted research poster.",
+    date: "2026-06-26",
+    type: "blog",
+    isNew: true,
+    image: bhtc_poster_award,
+    tags: ["Award", "BHTC", "Research"],
+    link: "#"
+  }
+];
+
+export const volunteering = [
+  {
+    id: 1,
+    img: vso_logo,
+    role: "Volunteer",
+    company: "VSO Mahe, Manipal",
+    date: "2023 – Present",
+    desc: "Actively volunteered with VSO (Voluntary Service Overseas) Mahe chapter at Manipal, contributing to community development and social impact initiatives. Engaged in awareness campaigns, skill-building workshops, and grassroots outreach programs aimed at empowering underserved communities. Collaborated with a multidisciplinary team of volunteers on health, education, and livelihood projects.",
+    skills: ["Community Development", "Outreach", "Leadership", "Teamwork", "Social Impact"],
+  },
+  {
+    id: 2,
+    img: team_everest_logo,
+    role: "Volunteer",
+    company: "Team Everest",
+    date: "2022 – 2023",
+    desc: "Volunteered with Team Everest, a youth-led NGO focused on social transformation through education and empowerment. Participated in teaching programs, environmental drives, and community engagement events. Worked hands-on with underprivileged youth to improve access to learning resources and build foundational digital literacy skills.",
+    skills: ["Education Outreach", "Youth Empowerment", "Event Coordination", "Digital Literacy"],
+  },
+  {
+    id: 3,
+    img: gssoc_img,
+    role: "Open Source Contributor",
+    company: "GSSoC & GitHub Open Source",
+    date: "2023 – Present",
+    desc: "Active open source contributor across multiple repositories on GitHub. Participated in GirlScript Summer of Code (GSSoC) contributing to community-driven projects. Contributions span bug fixes, feature additions, documentation improvements, and code reviews across AI/ML, web development, and developer tooling projects.",
+    skills: ["Git", "GitHub", "Pull Requests", "Code Review", "Documentation", "Open Source"],
+  },
+  {
+    id: 4,
+    img: kornia_logo,
+    role: "Open Source Contributor — 2 Merged PRs",
+    company: "Kornia · 10k+ ⭐ Computer Vision Library",
+    date: "2024",
+    desc: "Contributed to Kornia, the leading open source differentiable computer vision library built on PyTorch with 10,000+ GitHub stars. Had 2 pull requests merged into the main codebase — implementing enhancements to core vision transform modules and improving numerical stability of geometric operations. Working alongside a global community of CV researchers and engineers.",
+    skills: ["PyTorch", "Computer Vision", "Differentiable CV", "Open Source", "Python", "Linear Algebra"],
+    report_link: "https://github.com/kornia/kornia",
+    report_button_text: "View GitHub",
+  },
+];
 
 
 export const Bio = {
@@ -447,255 +564,166 @@ export const Positions = [
   },
 ];
 
-export const projects = [
-  // {
-  //   id: 9,
-  //   title: "Automatic Number Plate Recognization",
-  //   date: "Jun 2023 - Jul 2023",
-  //   description:
-  //     "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-  //   tags: [
-  //     "Docker",
-  //     "AWS",
-  //     "DuckDNS",
-  //     "Eslint",
-  //     "Husky",
-  //     "CI/CD",
-  //     "React Js",
-  //     "MongoDb",
-  //     "Node Js",
-  //     "Express Js",
-  //     "Redux",
-  //   ],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Trackify",
-  //   webapp: "https://trackify.duckdns.org",
-  // },
-  // {
-  //   id: 0,
-  //   title: "Podstream",
-  //   date: "Apr 2023 - May 2023",
-  //   description:
-  //     "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
-  //   tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Podstream",
-  //   webapp: "https://podstream.netlify.app/",
-  //   member: [
-  //     {
-  //       name: "Rishav Chanda",
-  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  //       github: "https://github.com/rishavchanda/",
-  //     },
-  //     {
-  //       name: "Upasana Chaudhuri",
-  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-  //       github: "https://github.com/upasana0710",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 1,
-  //   title: "Vexa",
-  //   date: "Oct 2022 - Present",
-  //   description:
-  //     "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
-  //   tags: [
-  //     "React Js",
-  //     "MongoDb",
-  //     "Node Js",
-  //     "Express Js",
-  //     "Redux",
-  //     "NodeMailer",
-  //   ],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Project-Management-App",
-  //   webapp: "https://vexa-app.netlify.app/",
-  // },
+export const publications = [
+  {
+    title: "Multi-Objective Edge Resource Optimization with D3QN-PER in Quantum-Classical IoT Edge Networks",
+    authors: "Panchadip Bhattacharjee; Somyajeet Arukh; Advithiya Duddu; Nishanth Shet; Induj Gupta; Gururaj H L",
+    conference: "2026 18th International Conference on COMmunication Systems and NETworks (COMSNETS)",
+    year: "2026",
+    link: "https://ieeexplore.ieee.org/document/11418298",
+    image: quantum_iot_net,
+    description: "Proposes a novel deep reinforcement learning approach using D3QN with Prioritized Experience Replay to optimize resource allocation in hybrid quantum-classical IoT edge networks. Achieves significant latency reduction and optimal load balancing."
+  },
+  {
+    title: "Accelerating Robust Graph Representation Learning: A High-Performance Dual-Stream Contrastive Framework",
+    authors: "Panchadip Bhattacharjee; Somyajeet Arukh; Sai Vishal Setti; Nishanth Shet; Gururaj H L",
+    conference: "2025 IEEE 32nd International Conference on High Performance Computing",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11485147",
+    image: graph_rep_learning,
+    description: "Presents a dual-stream contrastive learning framework that accelerates graph representation learning. The model robustly handles noisy data and improves node classification accuracy by dynamically contrasting topological and feature spaces."
+  },
+  {
+    title: "HAMP-Net: GPU-Accelerated Hierarchical Adaptive Mixed-Precision Training with Gradient Compression for Image Classification",
+    authors: "Panchadip Bhattacharjee; Somyajeet Arukh; Sai Vishal Setti; Nishanth Shet; Gururaj H L",
+    conference: "2025 IEEE 32nd International Conference on High Performance Computing",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11459325",
+    image: hamp_net_training,
+    description: "Introduces HAMP-Net, a GPU-accelerated training framework that dynamically adjusts precision levels and compresses gradients during image classification tasks, resulting in massive computational speedups without sacrificing model accuracy."
+  },
+  {
+    title: "Federated Learning for Edge Devices: A BHTC Approach",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11502232",
+    image: federated_learning,
+    description: "Develops a Block-wise Hierarchical Transfer Coding (BHTC) approach for federated learning across edge devices. This mechanism significantly reduces communication overhead and enhances privacy preservation during decentralized model training."
+  },
+  {
+    title: "Enhanced QR-MCP Protocol for Secure Communication",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11497756",
+    image: secure_qr_mcp,
+    description: "Designs an enhanced Quantum-Resistant Multi-Channel Protocol (QR-MCP) tailored for secure, high-speed communication in post-quantum environments, offering robust cryptographic defenses against advanced adversarial attacks."
+  },
+  {
+    title: "Advanced Deepfake detection using Deep Learning algorithms",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2024",
+    link: "https://ieeexplore.ieee.org/document/11306625",
+    image: deepfake,
+    description: "Compares various CNN architectures, including VGGFace16 and DenseNet-121, combined with PCA and SVMs to detect synthetic media. Achieves over 95% classification accuracy in distinguishing real from deepfake imagery."
+  },
+  {
+    title: "Explainable Stacked Ensemble Framework",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11497790",
+    image: ensemble_ai,
+    description: "Proposes an explainable stacked ensemble AI framework that integrates multiple predictive models. Uses SHAP and LIME methodologies to provide transparent, interpretable decision-making processes for critical applications."
+  },
+  {
+    title: "QUIBC: Quantum Inspired Blockchain",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2024",
+    link: "https://ieeexplore.ieee.org/document/11392962",
+    image: quantum_blockchain,
+    description: "Introduces a Quantum-Inspired Blockchain architecture that leverages quantum entanglement principles to secure blocks. This framework aims to mitigate the vulnerabilities of classical blockchains against quantum computing threats."
+  },
+  {
+    title: "Anomaly Detection Framework for IoT Networks",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11481935",
+    image: anomaly_iot,
+    description: "Presents a highly scalable anomaly detection framework tailored for large-scale IoT networks. Utilizes advanced machine learning models to identify network intrusions and malicious behavior with minimal false positives."
+  },
+  {
+    title: "PhishZero: A Robust Anti-Phishing Solution",
+    authors: "Panchadip Bhattacharjee, et al.",
+    conference: "IEEE",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11582842",
+    image: phishzero_security,
+    description: "Develops PhishZero, an intelligent anti-phishing solution utilizing real-time URL analysis and deep learning classifiers to preemptively block malicious domains and protect users from sophisticated social engineering attacks."
+  }
+];
 
+export const projects = [
   {
     id: 1,
-    title: "Advanced Multimodal LLM VS Code Copilot Extension",
-    date: "Aug 2024 - Oct 2024",
-    description:
-      "This extension was developed to enhance coding efficiency by integrating advanced language models like Llama 3.1, OpenAI’s GPT-3.5-turbo, and Gemini 1.5. These models offer powerful code generation, suggestion capabilities, and the ability to solve complex coding problems. The extension is designed with a user-friendly interface and can be easily integrated into your existing workflow.",
+    title: "Syncpad-Distributed-State-Synchronization-Engine",
+    date: "2024",
+    description: "SyncPad - a real‑time collaborative editor built on CRDTs, Lamport clocks, and Redis Pub/Sub. Branch documents like Git, replay edits like a timeline, and co‑write live with AI - engineered for scale.",
     image: tech_img,
-    tags: ["TypeScript", "LLM", "OpenAI", "Llama", "Together.ai API", "Groq SDK", "Gemini"],
-    category: "machine learning",
-    github: "https://github.com/Panchadip-128/LLM_Copilot_Extension",
-    // webapp: "https://drive.google.com/file/d/1g8JURii4McAnpAfkYx8dQ6nPG_LwPDR-/",
-    member: [
-      {
-        name: "Panchadip",
-        img: hero_img,
-        linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
-        github: "https://github.com/Panchadip-128",
-      },
-      
-    ],
+    tags: ["TypeScript", "CRDTs", "Redis"],
+    category: "web app",
+    github: "https://github.com/Panchadip-128/Syncpad-Distributed-State-Synchronization-Engine",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
-
   {
     id: 2,
-    title: "QKD Resource Management using Reinforcement Learning",
-    date: "Feb 2024 - Apr 2024",
-    description:
-      "Quantum Key Distribution (QKD) networks are crucial to ensure secure communication, while effective resource management is a leading challenge. This work provides cuttingedge simulation and reinforcement learning technique with deep reinforcement learning for edge resource optimization in QKD networks. We present a novel environment retaining the delicacy of the task distribution over multiple edge nodes based on node capacity, task difficulty, and delay. Our solution employs a Double Deep Q-Network (DDQN) for maximizing the best policies of resource usage, which exhibit noteworthy load balance, latency optimization, and overall system efficiency. Our suggested DDQN-based scheduler achieves 820,523 bps secure key rate, a 15-30% improvement over traditional solutions, with a latency decrease of 25% for facilitation of encryption at increased speeds for live secure communication. The solution is also less costly, maximizing resource utilization and decreasing node overloading by 40%, while providing fair allocation and system reliability increase. The process further maximizes cost-efficiency with a minimized cost-per-secure-bit value of 0.01 - 0.058 USD over heuristic scheduling algorithms.  ",
+    title: "devboard",
+    date: "2024",
+    description: "An engineering intelligence system that tracks team productivity and predicts burnout, built on a highly-concurrent event pipeline and advanced data algorithms.",
     image: RL_Logo,
-    tags: ["Python", "Keras", "TensorFlow", "Reinforcement Learning", "Pickle", "AWG", "Quantum Key Distribution"],
+    tags: ["TypeScript", "Data Analysis", "Pipeline"],
     category: "machine learning",
-    github: "https://github.com/Panchadip-128/-Optimizing-Edge-Resource-Management-using-Deep-Reinforcement-Learning-A-Comparative-Study-of-DQN-",
-    // webapp: "https://drive.google.com/file/d/1g8JURii4McAnpAfkYx8dQ6nPG_LwPDR-/",
-    member: [
-      {
-        name: "Panchadip",
-        img: hero_img,
-        linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
-        github: "https://github.com/Panchadip-128",
-      },
-      
-    ],
-  },
-
-  {
-    id: 3,
-    title: "Advanced Deepfake detection using Deep Learning algorithms",
-    date: "Jan 2024 - Mar 2024",
-    description:
-      "Deepfake detection is today a key frontline in the battle against online deception, and convolutional neural networks (CNNs) are the backbone of contemporary detection architectures. This paper compares three CNN architectures—VGGFace16, DenseNet-121, and custom CNNs—in classifying real and synthetic faces using a combined dataset of 140,000+ faces. By integrating principal component analysis (PCA) and support vectormachines (SVMs), our approach obtains clear clustering of real/fake images in low-dimensional spaces, with classification accuracy rates above 95% for all the models. The study points out the benefits of hybrid CNN-SVM architectures while documenting architectural trade-offs in computational cost and feature extraction.",
-    image:
-      deepfake,
-    tags: ["Python", "Deep Learning", "ResNet 50", "Custom CNN", "DenseNet","PCA-SVM","XAI","SHAP-LIME"],
-    category: "machine learning",
-    github: "https://github.com/Panchadip-128/DeepFake---Research-project-in-progress-",
-    // webapp: "https://drive.google.com/file/d/1g8JURii4McAnpAfkYx8dQ6nPG_LwPDR-/",
-    member: [
-      {
-        name: "Panchadip",
-        img: hero_img,
-        linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
-        github: "https://github.com/Panchadip-128",
-      },
-      
-    ],
+    github: "https://github.com/Panchadip-128/devboard",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
   {
     id: 3,
-    title: "Visual-Question-and-Answering-Model using BLIP & CLIP",
-    date: "Jan 2023 - Mar 2023",
-    description:
-      "This project focuses on developing Visual Question Answering (VQA) systems using two models: CLIP (Contrastive Language-Image Pretraining) and BLIP (Bootstrapped Language-Image Pretraining). The goal of VQA is to answer questions about an image by jointly learning from both textual and visual information. This project demonstrates how to utilize the CLIP and BLIP models for VQA tasks, and it includes the training, validation, and testing procedures, as well as metrics for evaluation.",
+    title: "MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
+    date: "2024",
+    description: "This project delivers an industry‑grade copilot platform with MCP protocol for agent messaging, hybrid RAG (vector + BM25) retrieval, streaming chat via SSE, and multi‑agent workflows (planner → coder).",
     image: vqa_img,
-    tags: ["Python", "Deep Learning", "BLIP", "CLIP", "Transformer","ViT"],
+    tags: ["Python", "MCP", "RAG", "LLM"],
     category: "machine learning",
-    github: "https://github.com/Panchadip-128/Visual-Question-and-Answering-Model-using-BLIP-CLIP",
-    // webapp: "https://drive.google.com/file/d/1g8JURii4McAnpAfkYx8dQ6nPG_LwPDR-/",
-    member: [
-      {
-        name: "Panchadip",
-        img: hero_img,
-        linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
-        github: "https://github.com/Panchadip-128",
-      },
-      
-    ],
+    github: "https://github.com/Panchadip-128/MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
-  // {
-  //   id: 3,
-  //   title: "Buckoid",
-  //   date: "Dec 2021 - Apr 2022",
-  //   description:
-  //     "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
-  //   image:
-  //     "https://camo.githubusercontent.com/fbf405040ae86b5d4a40f24e4ac034982cb8c0e2d850560ba64527997b258be8/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
-  //   tags: ["Kotlin", "MVVM", "Room Database", "Google Drive Cloud API"],
-  //   category: "android app",
-  //   github: "https://github.com/rishavchanda/Buckoid-Android-App",
-  //   webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
-  // },
-  // {
-  //   id: 10,
-  //   title: "Job Finding App",
-  //   date: "Jun 2023 - Jul 2023",
-  //   description:
-  //     "A Job Finding App made with React Native, Axios. Users can search for any job coming from API and apply there.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
-  //   tags: ["React Native", "JavaScript", "Axios"],
-  //   category: "android app",
-  //   github: "https://github.com/rishavchanda/Job-finder-App",
-  //   webapp: "https://github.com/rishavchanda/Job-finder-App",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Whatsapp Clone",
-  //   date: "Jul 2021",
-  //   description:
-  //     "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-  //   image:
-  //     "https://firebasestorage.googleapis.com/v0/b/whatsapp-clone-rishav.appspot.com/o/Screenshot%20(151).png?alt=media&token=48391593-1ef0-4a8c-a92a-eb82bdf38e89",
-  //   tags: ["React Js", "Firebase", "Firestore", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Whatsapp-Clone-React-Js",
-  //   webapp: "https://whatsapp-clone-rishav.web.app",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Todo Web App",
-  //   date: "Jun 2021",
-  //   description:
-  //     " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
-  //   image:
-  //     "https://camo.githubusercontent.com/a328255ad96f861f57d25096d28018ab2656c689a1456b0d145764009bed2d1a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-  //   tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Todo-Web-App",
-  //   webapp: "https://rishav-react-todo.netlify.app/",
-  // },
+  {
+    id: 4,
+    title: "RAG_Based_Research_Assistant_System",
+    date: "2024",
+    description: "A research paper discovery platform that enables users to search the latest academic publications and interact with Al-powered analysis while providing full source citations and performance metrics.",
+    image: tech_img,
+    tags: ["TypeScript", "RAG", "Research", "AI"],
+    category: "web app",
+    github: "https://github.com/Panchadip-128/RAG_Based_Research_Assistant_System",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 5,
+    title: "Multi-LLM-Copilot-Extension-for-VSCode",
+    date: "2024",
+    description: "A Copilot LLM chat engine based on Llama 70B and 300 series model (Complete end to end with Free Groq API). Our updated version uses Gemma and Llama 8B models for powerful code analysis, processing, debugging and workflow generation.",
+    image: deepfake,
+    tags: ["TypeScript", "LLM", "VSCode", "Groq"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Multi-LLM-Copilot-Extension-for-VSCode-for-Code-Debugging-Workflow-Generation-Pattern-Visualization",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
   {
     id: 6,
-    title: "AI Tech-Community Campus Website",
-    date: "Aug 2023",
-    description:
-      "The AI Tech-Community Campus Website is a comprehensive platform designed to serve as the digital hub for the AI club of a college. It provides a centralized space for students, faculty, and AI enthusiasts to explore the club's activities, events, and resources. The website is built with a modern tech stack to ensure a seamless user experience and scalability.",
-    image: tech_img,
-    tags: ["React Js", "API", "Axios", "Tailwind CSS"],
-    category: "web app",
-    github: "https://github.com/Panchadip-128/web2",
-    webapp: " ",
-    
-  },
-  {
-    id: 7,
-    title: "Modern Open Source Community Website",
-    date: "Dec 2024 - Feb 2024",
-    description:
-      "The Modern Open Source Community Website is a dynamic and interactive platform designed to foster collaboration and innovation within the open-source community. It serves as a central hub for developers, contributors, and enthusiasts to explore projects, participate in events, and connect with like-minded individuals. The website is built with a modern tech stack to ensure scalability, responsiveness, and a seamless user experience",
-    image:
-      tech_img,
-    tags: ["Next JS", "Tailwind CSS", "Firebase", "Google Auth","Vercel"],
-    category: "web app",
-    github: "https://github.com/Panchadip-128/Event_web-page--MBOSC",
-    webapp: "https://mbosc-takshakala2025.vercel.app/",
-    member: [
-      {
-        name: "Panchadip",
-        img: hero_img,
-        linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/",
-        github: "https://github.com/Panchadip-128",
-      },
-      
-    ],
-  },
-  
+    title: "Scalable-Sentiment-Analysis-System",
+    date: "2024",
+    description: "An end-to-end sentiment analysis pipeline with DistilBERT, featuring PII anonymization, profanity filtering, privacy-preserving NLP, deployment through Streamlit, FastAPI, React, Docker, Intel OpenVINO.",
+    image: RL_Logo,
+    tags: ["Python", "NLP", "FastAPI", "Docker", "React"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Scalable-Sentiment-Analysis-System-with-Privacy-Preserving-NLP-and-Multi-Stage-Deployment",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  }
 ];
 
 export const certifications = [

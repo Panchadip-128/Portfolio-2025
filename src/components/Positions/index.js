@@ -85,7 +85,7 @@ const PositionsComponent = () => {
                 <TimelineSection>
                     <Timeline>
                         {Positions.map((experience,index) => (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />
                                     {index !== Positions.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}

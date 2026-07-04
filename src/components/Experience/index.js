@@ -9,6 +9,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import ExperienceCard from '../Cards/ExperienceCard';
 import { experiences } from '../../data/constants';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display: flex;
@@ -85,13 +86,20 @@ const index = () => {
                 <TimelineSection>
                     <Timeline>
                         {experiences.map((experience,index) => (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />
                                     {index !== experiences.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
                                 </TimelineSeparator>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <ExperienceCard experience={experience}/>
+                                    <motion.div
+                                        initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                    >
+                                        <ExperienceCard experience={experience}/>
+                                    </motion.div>
                                 </TimelineContent>
                             </TimelineItem>
                         ))}

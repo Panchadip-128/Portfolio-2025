@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import Tilt from 'react-parallax-tilt'
+import { EventRounded } from '@mui/icons-material';
 
 
 const Button = styled.button`
@@ -15,27 +18,31 @@ const Button = styled.button`
     cursor: pointer;
     transition: all 0.8s ease-in-out;
 `
-const Card = styled.div`
+const Card = styled(motion.div)`
     width: 330px;
     height: 490px;
     background-color: ${({ theme }) => theme.card};
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
-    overflow: hidden;
-    padding: 26px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
     transition: all 0.5s ease-in-out;
     &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
+        box-shadow: 0 0 50px 4px rgba(133, 76, 230, 0.4);
         filter: brightness(1.1);
+        border-color: rgba(133, 76, 230, 0.5);
     }
     &:hover ${Button} {
         display: block;
     }
+`
+
+const TiltWrapper = styled(Tilt)`
+    width: 100%;
+    height: 100%;
+    padding: 26px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 `
 
 const Image = styled.img`
@@ -89,6 +96,10 @@ const Date = styled.div`
     margin-left: 2px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_secondary + 80};
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
     @media only screen and (max-width: 768px){
         font-size: 10px;
     }
@@ -124,24 +135,47 @@ const Avatar = styled.img`
 
 const ProjectCards = ({project,setOpenModal}) => {
     return (
-        <Card onClick={() => setOpenModal({state: true, project: project})}>
-            <Image src={project.image}/>
-            <Tags>
-                {project.tags?.map((tag, index) => (
-                <Tag>{tag}</Tag>
-                ))}
-            </Tags>
-            <Details>
-                <Title>{project.title}</Title>
-                <Date>{project.date}</Date>
-                <Description>{project.description}</Description>
-            </Details>
-            <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
-                ))}
-            </Members>
-            {/* <Button>View Project</Button> */}
+        <Card 
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            whileHover={{ y: -10 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setOpenModal({state: true, project: project})}
+        >
+            <TiltWrapper
+                glareEnable={true}
+                glareMaxOpacity={0.3}
+                glareColor="#854CE6"
+                glarePosition="all"
+                glareBorderRadius="10px"
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                scale={1.03}
+                transitionSpeed={2000}
+            >
+                {project.image && <Image src={project.image}/>}
+                <Tags>
+                    {project.tags?.map((tag, index) => (
+                    <Tag>{tag}</Tag>
+                    ))}
+                </Tags>
+                <Details>
+                    <Title>{project.title}</Title>
+                    <Date>
+                        <EventRounded style={{ fontSize: '14px' }} />
+                        {project.date}
+                    </Date>
+                    <Description>{project.description}</Description>
+                </Details>
+                <Members>
+                    {project.member?.map((member) => (
+                        <Avatar src={member.img}/>
+                    ))}
+                </Members>
+                {/* <Button>View Project</Button> */}
+            </TiltWrapper>
         </Card>
     )
 }

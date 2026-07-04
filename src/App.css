@@ -10,12 +10,18 @@
 
 html{
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 body{
   margin: 0px !important;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  cursor: none;
+}
+
+a, button, [role="button"], input, select, textarea {
+  cursor: none !important;
 }
 
 /* width */

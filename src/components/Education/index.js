@@ -9,6 +9,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { education, experiences } from '../../data/constants';
 import EducationCard from '../Cards/EducationCard';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display: flex;
@@ -88,9 +89,16 @@ const index = () => {
                 <TimelineSection>
                     <Timeline>
                         {education.map((education,index) => (
-                            <TimelineItem >
+                            <TimelineItem key={index}>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={education}/>
+                                    <motion.div
+                                        initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                    >
+                                        <EducationCard education={education}/>
+                                    </motion.div>
                                 </TimelineContent>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />

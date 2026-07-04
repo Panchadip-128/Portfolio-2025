@@ -1,5 +1,23 @@
 import React, { useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const moveGrid = keyframes`
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 60px 60px, -60px -60px;
+  }
+`;
+
+const glow = keyframes`
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -8,8 +26,49 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
+  padding-bottom: 60px;
+  /* Removed hard background color to blend with Wrapper */
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle, rgba(133, 76, 230, 0.15) 1px, transparent 1px),
+      radial-gradient(circle, rgba(76, 110, 245, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px, 40px 40px;
+    background-position: 0 0, 10px 10px;
+    animation: ${moveGrid} 25s linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(38.73deg, rgba(204, 0, 187, 0.08) 0%, rgba(201, 32, 184, 0) 50%), 
+      linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.08) 100%);
+    z-index: 0;
+  }
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+  
   @media (max-width: 960px) {
     padding: 0px;
+    padding-bottom: 40px;
   }
 `;
 

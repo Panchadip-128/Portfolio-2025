@@ -1,5 +1,5 @@
-import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
-import { Modal } from '@mui/material';
+import { CloseRounded, GitHub, LinkedIn, EventRounded } from '@mui/icons-material';
+import { Modal, IconButton } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
 
@@ -11,9 +11,10 @@ top: 0;
 left: 0;
 background-color: #000000a7;
 display: flex;
-align-items: top;
+align-items: center;
 justify-content: center;
-overflow-y: scroll;
+overflow-y: auto;
+padding: 20px 0;
 transition: all 0.5s ease;
 `;
 
@@ -21,8 +22,10 @@ const Wrapper = styled.div`
 max-width: 800px;
 width: 100%;
 border-radius: 16px;
-margin: 50px 12px;
+margin: auto 12px;
 height: min-content;
+max-height: 90vh;
+overflow-y: auto;
 background-color: ${({ theme }) => theme.card};
 color: ${({ theme }) => theme.text_primary};
 padding: 20px;
@@ -44,13 +47,16 @@ const Title = styled.div`
 
 const Date = styled.div`
     font-size: 16px;
-    margin: 2px 6px;
-    font-weight: 400;
+    margin: 4px 6px;
+    font-weight: 500;
     color: ${({ theme }) => theme.text_secondary};
+    display: flex;
+    align-items: center;
+    gap: 6px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }
-`
+`;
 
 
 
@@ -67,10 +73,15 @@ const Desc = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    object-fit: cover;
+    max-height: 220px;
+    object-fit: contain;
     border-radius: 12px;
     margin-top: 30px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    @media only screen and (max-width: 600px) {
+        max-height: 200px;
+        margin-top: 20px;
+    }
 `;
 
 const Label = styled.div`
@@ -161,10 +172,11 @@ const Button = styled.a`
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  color: red;
+  color: ${({ theme }) => theme.primary};
   padding: 12px 16px;
   border-radius: 8px;
-  background-color: red;
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.primary};
   cursor: pointer;
   text-decoration: none;
   transition: all 0.5s ease;
@@ -172,10 +184,11 @@ const Button = styled.a`
   ${({ dull, theme }) =>
     dull &&
     `
-      background-color: red;
-      color: white;
+      background-color: ${theme.bgLight};
+      color: ${theme.text_primary};
       &:hover {
-        background-color: yellow;
+        background-color: ${theme.primary};
+        color: ${theme.white};
       }
     `}
 
@@ -195,27 +208,31 @@ const Button = styled.a`
 
 
 
-const index = ({ openModal, setOpenModal }) => {
+const ProjectDetails = ({ openModal, setOpenModal }) => {
     const project = openModal?.project;
     return (
         <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
-            <Container>
+            <Container onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                    setOpenModal({ state: false, project: null });
+                }
+            }}>
                 <Wrapper>
-                    <CloseRounded
-                        style={{
-                            position: "absolute",
-                            top: "10px",
-                            right: "20px",
-                            cursor: "pointer",
-                        }}
+                    <IconButton 
+                        sx={{ position: "absolute", top: "10px", right: "10px", zIndex: 1000, color: "inherit", backgroundColor: "rgba(0,0,0,0.2)" }}
                         onClick={() => setOpenModal({ state: false, project: null })}
-                    />
-                    <Image src={project?.image} />
+                    >
+                        <CloseRounded />
+                    </IconButton>
+                    {project?.image && <Image src={project?.image} />}
                     <Title>{project?.title}</Title>
-                    <Date>{project.date}</Date>
+                    <Date>
+                        <EventRounded style={{ fontSize: '18px' }} />
+                        {project?.date}
+                    </Date>
                     <Tags>
-                        {project?.tags.map((tag) => (
-                            <Tag>{tag}</Tag>
+                        {project?.tags.map((tag, index) => (
+                            <Tag key={index}>{tag}</Tag>
                         ))}
                     </Tags>
                     <Desc>{project?.description}</Desc>
@@ -223,8 +240,8 @@ const index = ({ openModal, setOpenModal }) => {
                         <>
                             <Label>Members</Label>
                             <Members>
-                                {project?.member.map((member) => (
-                                    <Member>
+                                {project?.member.map((member, index) => (
+                                    <Member key={index}>
                                         <MemberImage src={member.img} />
                                         <MemberName>{member.name}</MemberName>
                                         <a href={member.github} target="new" style={{textDecoration: 'none', color: 'inherit'}}>
@@ -249,4 +266,4 @@ const index = ({ openModal, setOpenModal }) => {
     )
 }
 
-export default index
+export default ProjectDetails

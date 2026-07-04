@@ -1,44 +1,91 @@
 import React from 'react'
-import HeroBgAnimation from '../HeroBgAnimation'
-import { HeroContainer, HeroBg, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle,SocialMediaIcons,SocialMediaIcon, ResumeButton } from './HeroStyle'
+import { HeroContainer, HeroBg, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, Title, SubTitle, ResumeButton, RolesContainer, RoleBadge, TextLoop, Span } from './HeroStyle'
 import HeroImg from '../../images/HeroImage.jpg'
-import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
+import HeroBgAnimation from '../HeroBgAnimation';
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const HeroWrapper = styled.div`
+  position: relative;
+  padding-bottom: 80px;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.7));
+  z-index: 5;
+  @media (max-width: 960px) {
+    padding-bottom: 60px;
+  }
+`;
 
 const HeroSection = () => {
     return (
-        <div id="about">
+        <HeroWrapper id="about">
             <HeroContainer>
                 <HeroBg>
                     <HeroBgAnimation />
                 </HeroBg>
-                <HeroInnerContainer >
-                    <HeroLeftContainer id="Left">
-                        <Title>Hi, I am <br /> {Bio.name}</Title>
-                        <TextLoop>
-                            I am a
-                            <Span>
-                                <Typewriter
-                                    options={{
-                                        strings: Bio.roles,
-                                        autoStart: true,
-                                        loop: true,
-                                    }}
-                                />
-                            </Span>
-                        </TextLoop>
-                        <SubTitle>{Bio.description}</SubTitle>
-                        <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
+                <HeroInnerContainer>
+                    <HeroLeftContainer id="Left"
+                        variants={staggerContainer}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        <Title variants={fadeUp}>Panchadip<br/>Bhattacharjee</Title>
+                        <motion.div variants={fadeUp}>
+                            <TextLoop>
+                                I am a
+                                <Span>
+                                    <Typewriter
+                                        options={{
+                                            strings: Bio.roles,
+                                            autoStart: true,
+                                            loop: true,
+                                        }}
+                                    />
+                                </Span>
+                            </TextLoop>
+                        </motion.div>
+                        <RolesContainer variants={fadeUp}>
+                            {Bio.roles.slice(0, 4).map((role, idx) => (
+                                <RoleBadge key={idx}>{role}</RoleBadge>
+                            ))}
+                        </RolesContainer>
+                        <SubTitle variants={fadeUp}>{Bio.description}</SubTitle>
+                        <motion.div variants={fadeUp}>
+                            <ResumeButton href={Bio.resume} target='_blank'>View Resume</ResumeButton>
+                        </motion.div>
                     </HeroLeftContainer>
 
-                    <HeroRightContainer id="Right">
-
-                        <Img src={HeroImg} alt="hero-image" />
+                    <HeroRightContainer id="Right"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        <Img 
+                            src={HeroImg} 
+                            alt="Panchadip Bhattacharjee" 
+                            animate={{ y: [0, -15, 0] }}
+                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                        />
                     </HeroRightContainer>
                 </HeroInnerContainer>
-
             </HeroContainer>
-        </div>
+        </HeroWrapper>
     )
 }
 
