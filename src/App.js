@@ -42,8 +42,8 @@ const Body = styled.div`
 const TopWrapper = styled.div`
   background: linear-gradient(180deg, rgba(15, 10, 25, 1) 0%, rgba(90, 40, 180, 0.6) 100%);
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% calc(100% - 300px), 0 100%);
-  padding-bottom: 300px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% calc(100% - 120px), 0 100%);
+  padding-bottom: 120px;
   position: relative;
   margin-top: -500px;
   padding-top: 300px;
@@ -53,7 +53,8 @@ const TopWrapper = styled.div`
   @media (max-width: 640px) {
     padding-top: 400px;
   }
-  z-index: 1;
+  z-index: 2;
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.9));
   
   &::before {
     content: '';

@@ -19,6 +19,7 @@ export const HeroContainer = styled.div`
     padding: 32px 16px 150px 16px;
   }
   z-index: 2;
+  filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.9));
 
   clip-path: polygon(0 0, 100% 0, 100% 85%, 70% 75%, 0 100%);
   @media (max-width: 960px) {
