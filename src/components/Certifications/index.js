@@ -148,31 +148,34 @@ const SectionTitle = styled.h2`
 
 const NeonButton = styled.a`
   display: inline-block;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 18px 48px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
   color: #ffffff;
   background-color: #111;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(0, 255, 198, 0.3);
 
   &:before {
     content: '';
     position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: 10px;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 14px;
     background: linear-gradient(90deg, #ff004f, #ff8c00, #00ffc6, #0077ff, #ff004f);
-    background-size: 100% 100%;
+    background-size: 200% 200%;
+    animation: rainbowMove 3s linear infinite;
     z-index: -1;
-    filter: blur(2px);
-    opacity: 0.8;
+    filter: blur(4px);
+    opacity: 1;
   }
 
   &:after {
@@ -182,14 +185,20 @@ const NeonButton = styled.a`
     left: 2px;
     right: 2px;
     bottom: 2px;
-    border-radius: 6px;
+    border-radius: 10px;
     background-color: #111;
     z-index: -1;
   }
 
+  @keyframes rainbowMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(6, 69, 170, 0.91);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0, 255, 198, 0.8), 0 0 45px rgba(0, 119, 255, 0.6);
   }
 `;
 
