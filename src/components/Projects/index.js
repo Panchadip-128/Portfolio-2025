@@ -15,7 +15,7 @@ const MarqueeWrapper = styled.div`
   gap: 20px;
   overflow-x: hidden;
   overflow-y: visible;
-  padding: 20px 0;
+  padding: 20px 0 160px 0;
 `;
 
 
