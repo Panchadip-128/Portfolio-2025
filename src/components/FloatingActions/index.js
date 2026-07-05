@@ -47,11 +47,8 @@ const FloatingButton = styled.button`
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: none;
-  background: ${({ theme, variant }) => 
-    variant === 'primary' ? theme.primary : 
-    variant === 'updates' ? `linear-gradient(135deg, ${theme.primary}, ${theme.primary}AA)` :
-    'rgba(255, 255, 255, 0.1)'};
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   cursor: pointer;
   display: flex;
@@ -84,8 +81,8 @@ const SocialButton = styled.a`
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 15, 20, 0.9);
   color: white;
   cursor: pointer;
   display: flex;
