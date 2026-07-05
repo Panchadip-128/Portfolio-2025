@@ -40,7 +40,7 @@ const Body = styled.div`
 `
 
 const TopWrapper = styled.div`
-  background: linear-gradient(180deg, rgba(60, 30, 120, 0.9) 0%, rgba(90, 40, 180, 0.6) 100%);
+  background: linear-gradient(180deg, rgba(60, 30, 120, 0.9) 0%, rgba(90, 40, 180, 0.7) 85%, rgba(0, 255, 170, 0.4) 100%);
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 15% calc(100% - 120px), 0 100%);
   padding-bottom: 120px;
@@ -54,7 +54,7 @@ const TopWrapper = styled.div`
     padding-top: 400px;
   }
   z-index: 2;
-  filter: drop-shadow(0px 15px 40px rgba(130, 50, 255, 0.6)) drop-shadow(0px 5px 15px rgba(0, 255, 170, 0.4));
+  filter: drop-shadow(0px 15px 40px rgba(130, 50, 255, 0.6)) drop-shadow(0px 10px 30px rgba(0, 255, 170, 0.8));
   
   &::before {
     content: '';
