@@ -48,6 +48,7 @@ const Container = styled.div`
   align-items: center;
   padding: 160px 0px 160px 0px;
   clip-path: polygon(0 0, 50% 10vw, 100% 0, 100% 100%, 50% calc(100% - 10vw), 0 100%);
+  filter: drop-shadow(0px -15px 40px rgba(130, 50, 255, 0.6)) drop-shadow(0px 15px 40px rgba(130, 50, 255, 0.6));
   @media (max-width: 960px) {
     padding: 120px 0px;
     clip-path: polygon(0 0, 50% 12vw, 100% 0, 100% 100%, 50% calc(100% - 12vw), 0 100%);

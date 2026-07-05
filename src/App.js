@@ -54,7 +54,7 @@ const TopWrapper = styled.div`
     padding-top: 400px;
   }
   z-index: 2;
-  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.9));
+  filter: drop-shadow(0px 15px 40px rgba(130, 50, 255, 0.6)) drop-shadow(0px 5px 15px rgba(0, 255, 170, 0.4));
   
   &::before {
     content: '';
@@ -89,6 +89,10 @@ const BottomWrapper = styled.div`
   clip-path: polygon(0 120px, 100% 0, 100% calc(100% - 50px), 30% 100%, 0 calc(100% - 50px));
   padding-top: 120px;
   padding-bottom: 80px;
+  margin-top: -120px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0px -15px 40px rgba(130, 50, 255, 0.6)) drop-shadow(0px -5px 15px rgba(0, 255, 170, 0.4));
 `
 
 // Scrolls to top on every route change
