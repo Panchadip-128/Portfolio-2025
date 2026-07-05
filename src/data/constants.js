@@ -47,6 +47,7 @@ import ieee_conecct_award from '../images/ieee_conecct_award.png';
 import bhtc_poster_award from '../images/bhtc_poster_award.png';
 import image_intl from '../images/custom_logos/image_intl.png';
 import image_amzn from '../images/custom_logos/image_amzn.png';
+import image_nokia from '../images/custom_logos/image_nkia.png';
 
 export const recentUpdates = [
   {
@@ -260,6 +261,34 @@ export const skills = [
 
 
 export const experiences = [
+  {
+    id: 14,
+    img: image_amzn,
+    role: "Amazon ML School Mentee - 2026 Cohort",
+    company: "Amazon",
+    date: "July 2026",
+    desc: "Selected for the 2026 cohort, mentored by Amazon scientists and team on industry ML projects and advanced AI applications.",
+    skills: [
+      "Machine Learning",
+      "Generative AI",
+      "Data Science",
+      "Python"
+    ],
+  },
+  {
+    id: 13,
+    img: image_nokia,
+    role: "Project Intern-Agentic AI & Security",
+    company: "Nokia",
+    date: "2026",
+    desc: "Working on cutting-edge Agentic AI solutions and security systems.",
+    skills: [
+      "Agentic AI",
+      "Security",
+      "Machine Learning",
+      "Python"
+    ],
+  },
   {
     id: 12,
     img: image_amzn,
