@@ -255,7 +255,6 @@ function MarkdownRenderer({ content }) {
 
     // Code block
     if (line.startsWith('```')) {
-      const lang = line.slice(3).trim();
       const codeLines = [];
       i++;
       while (i < lines.length && !lines[i].startsWith('```')) {

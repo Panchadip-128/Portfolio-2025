@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
-import _default from "../../themes/default";
+
 
 export const HeroContainer = styled.div`
   background: 

@@ -10,14 +10,6 @@ const moveGrid = keyframes`
   }
 `;
 
-const glow = keyframes`
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.7;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
