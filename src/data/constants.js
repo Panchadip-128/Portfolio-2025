@@ -168,19 +168,28 @@ export const Bio = {
 
 export const skills = [
   {
-    title: "Artificial Intelligence & Machine Learning",
+    title: "Artificial Intelligence & GenAI",
     skills: [
       { name: "Llama Models", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_AI_logo.svg/1024px-Meta_AI_logo.svg.png" },
       { name: "Google Gemini", image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" },
       { name: "GPT / OpenAI", image: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
       { name: "HuggingFace", image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
-      { name: "LangChain & RAG", image: langchain_logo },
-      { name: "NLP & Prompts", image: "https://cdn-icons-png.flaticon.com/512/2814/2814666.png" },
-      { name: "MCP Protocol", image: "https://cdn-icons-png.flaticon.com/512/3261/3261308.png" },
+      { name: "LangChain", image: langchain_logo },
+      { name: "RAG Pipelines", image: "https://cdn-icons-png.flaticon.com/512/2814/2814666.png" },
+      { name: "AI Agents", image: "https://cdn-icons-png.flaticon.com/512/4333/4333555.png" },
+      { name: "Prompt Engineering", image: "https://cdn-icons-png.flaticon.com/512/10006/10006841.png" },
+      { name: "Vector Databases", image: "https://cdn-icons-png.flaticon.com/512/5110/5110904.png" },
+      { name: "Model Fine-Tuning", image: "https://cdn-icons-png.flaticon.com/512/8067/8067981.png" },
+      { name: "MCP Protocol", image: "https://cdn-icons-png.flaticon.com/512/3261/3261308.png" }
+    ],
+  },
+  {
+    title: "Data Science & Machine Learning",
+    skills: [
+      { name: "Python", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "TensorFlow", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/2048px-Tensorflow_logo.svg.png" },
       { name: "PyTorch", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" },
       { name: "Scikit-Learn", image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
-      { name: "Python", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "Pandas", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" },
       { name: "NumPy", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" },
       { name: "Matplotlib", image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" },
