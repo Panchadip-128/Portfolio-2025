@@ -40,9 +40,9 @@ const Body = styled.div`
 `
 
 const TopWrapper = styled.div`
-  background: linear-gradient(180deg, rgba(40, 48, 138, 1) 0%, rgba(5, 5, 10, 1) 100%);
+  background: linear-gradient(180deg, rgba(15, 10, 25, 1) 0%, rgba(90, 40, 180, 0.6) 100%);
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% calc(100% - 50px), 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 180px), 0 100%);
   padding-bottom: 20px;
   position: relative;
   margin-top: -500px;
