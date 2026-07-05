@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink, BlogButton, BlogDot, BlogButtonMobile } from './NavbarStyledComponent'
+import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink, BlogButton, BlogDot, BlogButtonMobile, MobileBlogButtonContainer } from './NavbarStyledComponent'
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
@@ -60,6 +60,14 @@ const Navbar = () => {
         <NavLogo to='/' style={{ display: "flex", alignItems: "center", color: "white", cursor: 'pointer' }}>
           <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
         </NavLogo>
+
+        <MobileBlogButtonContainer>
+          <BlogButtonMobile onClick={handleBlogClick} role="button" tabIndex={0} style={{ padding: '6px 14px', fontSize: '13px' }}>
+            <CreateIcon style={{ fontSize: '13px' }} />
+            Blog
+            <BlogDot />
+          </BlogButtonMobile>
+        </MobileBlogButtonContainer>
 
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />

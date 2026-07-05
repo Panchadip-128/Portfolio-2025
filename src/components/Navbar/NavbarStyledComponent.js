@@ -249,6 +249,19 @@ export const ButtonContainer = styled.div`
 `;
 
 
+export const MobileBlogButtonContainer = styled.div`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+`;
+
 export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
