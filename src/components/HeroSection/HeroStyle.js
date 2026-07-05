@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const HeroContainer = styled.div`
   background: 
     radial-gradient(circle at 15% 10%, rgba(120, 30, 200, 0.45) 0%, transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(0, 255, 170, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 85% 20%, rgba(0, 255, 170, 0.25) 0%, transparent 50%),
     radial-gradient(circle at 50% 85%, rgba(255, 0, 150, 0.15) 0%, transparent 55%),
     linear-gradient(135deg, rgba(15, 10, 35, 1) 0%, rgba(9, 9, 14, 1) 100%);
   display: flex;
@@ -112,7 +112,7 @@ export const Img = styled(motion.img)`
   max-height: 400px;
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.primary};
-  box-shadow: 0 0 80px rgba(0, 255, 170, 0.4), 0 0 30px rgba(0, 255, 170, 0.3);
+  box-shadow: 0 0 40px rgba(0, 255, 170, 0.25);
 
   @media (max-width: 768px) {
     max-width: 400px;
