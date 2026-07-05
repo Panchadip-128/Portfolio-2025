@@ -41,6 +41,7 @@ const Title = styled.div`
     font-weight: 600;
     margin-top: 20px;
     color: ${({ theme }) => theme.text_primary};
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
     @media (max-width: 768px) {
         margin-top: 12px;
         font-size: 32px;
@@ -51,7 +52,9 @@ const Desc = styled.div`
     font-size: 18px;
     text-align: center;
     max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
+    color: ${({ theme }) => theme.text_primary};
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
     @media (max-width: 768px) {
         margin-top: 12px;
         font-size: 16px;
