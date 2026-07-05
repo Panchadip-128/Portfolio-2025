@@ -302,7 +302,7 @@ export const experiences = [
   },
   {
     id: 12,
-    img: amazon_ml_summer_school,
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png",
     role: "Amazon ML School Mentee",
     company: "Amazon",
     date: "July 2025",
