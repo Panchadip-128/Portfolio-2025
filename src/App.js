@@ -83,7 +83,7 @@ const BottomWrapper = styled.div`
   background-image: 
     linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(130, 50, 255, 0.6) 0%, rgba(30, 26, 43, 1) 15%, rgba(12, 10, 20, 1) 100%);
+    linear-gradient(180deg, rgba(255, 0, 100, 0.8) 0%, rgba(0, 255, 170, 0.6) 15%, rgba(30, 26, 43, 1) 30%, rgba(12, 10, 20, 1) 100%);
   background-size: 40px 40px, 40px 40px, 100% 100%;
   width: 100%;
   clip-path: polygon(0 120px, 100% 0, 100% calc(100% - 50px), 30% 100%, 0 calc(100% - 50px));
@@ -92,7 +92,7 @@ const BottomWrapper = styled.div`
   margin-top: -120px;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0px -15px 40px rgba(140, 50, 255, 0.9)) drop-shadow(0px -5px 15px rgba(0, 255, 170, 0.4));
+  filter: drop-shadow(0px -15px 40px rgba(255, 0, 100, 0.7)) drop-shadow(0px -5px 15px rgba(0, 255, 170, 0.5));
 `
 
 // Scrolls to top on every route change
