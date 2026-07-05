@@ -262,7 +262,7 @@ export const skills = [
 export const experiences = [
   {
     id: 12,
-    img: amazon_logo_custom,
+    img: image_amzn,
     role: "Amazon ML School Mentee",
     company: "Amazon",
     date: "July 2025",
@@ -276,7 +276,7 @@ export const experiences = [
   },
   {
     id: 11,
-    img: intel_logo_custom,
+    img: image_intl,
     role: "Project Trainee Intern",
     company: "Intel Corporation",
     date: "May 2025 - August 2025",
