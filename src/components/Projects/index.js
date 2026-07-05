@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Container, Wrapper, Title, Desc, CardContainer, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
+import { Container, Wrapper, Title, Desc, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
 import ProjectCard from '../Cards/ProjectCards'
 import { projects } from '../../data/constants'
 import Marquee from 'react-fast-marquee'
@@ -63,7 +63,7 @@ const Projects = ({openModal,setOpenModal}) => {
       <MarqueeWrapper>
         {filteredProjects.length > 0 && (
           <>
-            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="left">
+            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
               {filteredProjects.map((project, index) => (
                 <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                   <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
@@ -71,7 +71,7 @@ const Projects = ({openModal,setOpenModal}) => {
               ))}
             </Marquee>
 
-            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="right">
+            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
               {filteredProjects.map((project, index) => (
                 <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                   <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
@@ -79,7 +79,7 @@ const Projects = ({openModal,setOpenModal}) => {
               ))}
             </Marquee>
 
-            <Marquee speed={40} pauseOnHover={true} gradient={false} direction="left">
+            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
               {filteredProjects.map((project, index) => (
                 <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                   <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
