@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { recentUpdates } from '../../data/constants';
+import { useNavigate } from 'react-router-dom';
 
 const gradientMove = keyframes`
   0% { background-position: 0% 50%; }
@@ -301,15 +302,39 @@ const FilterButton = styled.button`
 
 const RecentUpdates = () => {
   const [filter, setFilter] = useState('all');
+  const navigate = useNavigate();
   
   const filteredUpdates = filter === 'all' 
     ? recentUpdates 
     : recentUpdates.filter(update => update.type === filter);
 
-  const handleCardClick = (link) => {
-    const element = document.querySelector(link);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleCardClick = (link, type) => {
+    if (link === '#') {
+      if (type === 'blog') {
+        navigate('/blog');
+        window.scrollTo(0, 0);
+      }
+      return;
+    }
+    
+    if (link.startsWith('http')) {
+      window.open(link, '_blank');
+      return;
+    }
+
+    if (link.startsWith('/')) {
+      navigate(link);
+      window.scrollTo(0, 0);
+      return;
+    }
+    
+    try {
+      const element = document.querySelector(link);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (e) {
+      console.warn("Invalid selector for scroll:", link);
     }
   };
 
@@ -359,7 +384,7 @@ const RecentUpdates = () => {
             <UpdateCard 
               key={update.id} 
               index={index}
-              onClick={() => handleCardClick(update.link)}
+              onClick={() => handleCardClick(update.link, update.type)}
             >
               {update.image && <UpdateImage src={update.image} alt={update.title} />}
               <UpdateHeader>

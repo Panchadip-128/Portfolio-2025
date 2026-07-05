@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaBell, FaTimes, FaCalendar, FaExternalLinkAlt, FaChevronRight } from 'react-icons/fa';
 import { recentUpdates } from '../../data/constants';
+import { useNavigate } from 'react-router-dom';
 
 const pulse = keyframes`
   0%, 100% {
@@ -325,15 +326,39 @@ export const UpdatesBellButton = ({ onClick, hasNewUpdates }) => (
 );
 
 const UpdatesPopup = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const newUpdatesCount = recentUpdates.filter(update => update.isNew).length;
 
   const handleUpdateClick = (update) => {
-    const element = document.querySelector(update.link);
-    if (element) {
-      onClose();
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+    onClose();
+    if (update.link === '#') {
+      if (update.type === 'blog') {
+        navigate('/blog');
+        window.scrollTo(0, 0);
+      }
+      return;
+    }
+    
+    if (update.link.startsWith('http')) {
+      window.open(update.link, '_blank');
+      return;
+    }
+
+    if (update.link.startsWith('/')) {
+      navigate(update.link);
+      window.scrollTo(0, 0);
+      return;
+    }
+    
+    try {
+      const element = document.querySelector(update.link);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    } catch (e) {
+      console.warn("Invalid selector for scroll:", update.link);
     }
   };
 
