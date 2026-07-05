@@ -54,7 +54,7 @@ const HeroBgAnimation = () => (
         transform="translate(-295.027 -193.118)"
         rx="1.07306"
         ry="1.07433"
-        fill="#46737"
+        fill="#00ffaa"
       >
         <animateMotion
           dur="5s"
