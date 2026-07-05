@@ -282,6 +282,38 @@ export const experiences = [
     report_link: "https://github.com/Panchadip-128/Project-Reports/blob/main/Project-Report-Hifi_Delivery_Eats.pdf",
    
   },
+  {
+    id: 11,
+    img: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg",
+    role: "Project Trainee Intern",
+    company: "Intel Corporation",
+    date: "May 2025 - August 2025",
+    desc: "Developing a tag generation pipeline using the Qwen2-1.5B Instruct LLM to automatically classify research papers across 50+ categories, increasing enrichment speed by 70% and enabling large-scale topic discovery deployed using Kubernetes. Developed a modular, end-to-end sentiment analysis system with 6+ microservices (PII anonymization, profanity masking, sentiment classification, topic modeling), deployed via Docker, FastAPI, and Streamlit, improving review processing speed by 65% and enabling real-time feedback analysis across 1000+ entries.",
+    skills: [
+      "Qwen2-1.5B",
+      "LLMs",
+      "Kubernetes",
+      "Microservices",
+      "Docker",
+      "FastAPI",
+      "Streamlit",
+      "Python"
+    ],
+  },
+  {
+    id: 12,
+    img: amazon_ml_summer_school,
+    role: "Amazon ML School Mentee",
+    company: "Amazon",
+    date: "July 2025",
+    desc: "Selected among top 3000 candidates out of 60,000+ candidates, mentored by Amazon scientists and team on different industry ML projects and applications.",
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "Data Science",
+      "Python"
+    ],
+  },
   
   
   {
