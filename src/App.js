@@ -79,7 +79,11 @@ const TopWrapper = styled.div`
 `
 
 const BottomWrapper = styled.div`
-  background: linear-gradient(180deg, rgba(30, 26, 43, 1) 0%, rgba(12, 10, 20, 1) 100%);
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(30, 26, 43, 1) 0%, rgba(12, 10, 20, 1) 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 30% 100%, 0 calc(100% - 50px));
   padding-bottom: 80px;
