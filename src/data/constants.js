@@ -45,6 +45,8 @@ import phishzero_security from '../images/phishzero_security_1783173665473.png';
 import amazon_ml_summer_school from '../images/amazon_ml_summer_school_real.png';
 import ieee_conecct_award from '../images/ieee_conecct_award.png';
 import bhtc_poster_award from '../images/bhtc_poster_award.png';
+import image_intl from '../images/custom_logos/image_intl.png';
+import image_amzn from '../images/custom_logos/image_amzn.png';
 
 export const recentUpdates = [
   {
@@ -260,7 +262,7 @@ export const skills = [
 export const experiences = [
   {
     id: 12,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png",
+    img: amazon_logo_custom,
     role: "Amazon ML School Mentee",
     company: "Amazon",
     date: "July 2025",
@@ -274,7 +276,7 @@ export const experiences = [
   },
   {
     id: 11,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/1024px-Intel_logo_%282006-2020%29.svg.png",
+    img: intel_logo_custom,
     role: "Project Trainee Intern",
     company: "Intel Corporation",
     date: "May 2025 - August 2025",
