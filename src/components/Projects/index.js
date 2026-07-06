@@ -26,9 +26,12 @@ const Projects = ({openModal,setOpenModal}) => {
     ? projects 
     : projects.filter((item) => item.category === toggle);
 
-  const row1 = filteredProjects.filter((_, index) => index % 3 === 0);
-  const row2 = filteredProjects.filter((_, index) => index % 3 === 1);
-  const row3 = filteredProjects.filter((_, index) => index % 3 === 2);
+  const numProjects = filteredProjects.length;
+  const row1Count = Math.ceil(numProjects / 3);
+  const row2Count = Math.ceil((numProjects - row1Count) / 2);
+  const row1 = filteredProjects.slice(0, row1Count);
+  const row2 = filteredProjects.slice(row1Count, row1Count + row2Count);
+  const row3 = filteredProjects.slice(row1Count + row2Count);
 
   const showMarquee = filteredProjects.length > 3;
 

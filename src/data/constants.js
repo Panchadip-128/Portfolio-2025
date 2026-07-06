@@ -630,17 +630,6 @@ export const publications = [
 export const projects = [
   {
     id: 1,
-    title: "Syncpad-Distributed-State-Synchronization-Engine",
-    date: "2024",
-    description: "SyncPad - a real‑time collaborative editor built on CRDTs, Lamport clocks, and Redis Pub/Sub. Branch documents like Git, replay edits like a timeline, and co‑write live with AI - engineered for scale.",
-    image: tech_img,
-    tags: ["TypeScript", "CRDTs", "Redis"],
-    category: "web app",
-    github: "https://github.com/Panchadip-128/Syncpad-Distributed-State-Synchronization-Engine",
-    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
-  },
-  {
-    id: 2,
     title: "devboard",
     date: "2024",
     description: "An engineering intelligence system that tracks team productivity and predicts burnout, built on a highly-concurrent event pipeline and advanced data algorithms.",
@@ -651,18 +640,18 @@ export const projects = [
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
   {
-    id: 3,
-    title: "MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
+    id: 2,
+    title: "Syncpad-Distributed-State-Synchronization-Engine",
     date: "2024",
-    description: "This project delivers an industry‑grade copilot platform with MCP protocol for agent messaging, hybrid RAG (vector + BM25) retrieval, streaming chat via SSE, and multi‑agent workflows (planner → coder).",
-    image: vqa_img,
-    tags: ["Python", "MCP", "RAG", "LLM"],
-    category: "machine learning",
-    github: "https://github.com/Panchadip-128/MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
+    description: "SyncPad - a real‑time collaborative editor built on CRDTs, Lamport clocks, and Redis Pub/Sub. Branch documents like Git, replay edits like a timeline, and co‑write live with AI - engineered for scale.",
+    image: tech_img,
+    tags: ["TypeScript", "CRDTs", "Redis"],
+    category: "web app",
+    github: "https://github.com/Panchadip-128/Syncpad-Distributed-State-Synchronization-Engine",
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
   {
-    id: 4,
+    id: 3,
     title: "RAG_Based_Research_Assistant_System",
     date: "2024",
     description: "A research paper discovery platform that enables users to search the latest academic publications and interact with Al-powered analysis while providing full source citations and performance metrics.",
@@ -670,6 +659,17 @@ export const projects = [
     tags: ["TypeScript", "RAG", "Research", "AI"],
     category: "web app",
     github: "https://github.com/Panchadip-128/RAG_Based_Research_Assistant_System",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 4,
+    title: "MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
+    date: "2024",
+    description: "This project delivers an industry‑grade copilot platform with MCP protocol for agent messaging, hybrid RAG (vector + BM25) retrieval, streaming chat via SSE, and multi‑agent workflows (planner → coder).",
+    image: vqa_img,
+    tags: ["Python", "MCP", "RAG", "LLM"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/MCP-First-Multi-Agent-Copilot-Framework-with-Hybrid-RAG-Streaming",
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   },
   {
