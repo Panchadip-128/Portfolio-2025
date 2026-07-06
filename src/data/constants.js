@@ -448,7 +448,7 @@ export const education = [
   {
     id: 1,
     img: allen,
-    school: "Allen Career Institute, Kolkata ",
+    school: "Allen Career Instt",
     date: 2023,
     grade: "90% (CBSE-XII) , 93 percentile(JEE M)",
     desc: "I completed my JEE preperation from Allen Career Institute and Schooling from SMI, Madhyamgram, Kolkata.",
