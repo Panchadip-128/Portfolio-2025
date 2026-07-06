@@ -693,6 +693,39 @@ export const projects = [
     category: "machine learning",
     github: "https://github.com/Panchadip-128/Scalable-Sentiment-Analysis-System-with-Privacy-Preserving-NLP-and-Multi-Stage-Deployment",
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 7,
+    title: "Smart-Classroom-System (CSTPE)",
+    date: "2026",
+    description: "A 10-module patent-ready Continuous Spatial-Temporal Presence Engine attendance system combining YOLOv8 liveness detection, multi-modal biometric fusion, zero-knowledge proofs, and blockchain-anchored audit trails.",
+    image: secure_qr_mcp,
+    tags: ["FastAPI", "YOLOv8", "React", "SQLite", "Biometrics", "Blockchain", "ZKP"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Smart-Classroom-System",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 8,
+    title: "D-HAQNAS: Differentiable Hardware-Aware Quantum Neural Architecture Search",
+    date: "2026",
+    description: "A gradient-based framework that jointly optimizes quantum circuit topology and variational parameters under explicit NISQ hardware constraints for medical imaging, offering 96.21% accuracy on PneumoniaMNIST.",
+    image: quantum_blockchain,
+    tags: ["Python", "PyTorch", "PennyLane", "Quantum ML", "NAS", "NISQ"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Differentiable-Hardware-Aware-Quantum-Neural-Architecture-Search",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 9,
+    title: "MST-Conformer: Multi-Scale Temporal Conformer for HAR",
+    date: "2025",
+    description: "A multi-scale temporal conformer deep learning model for wearable sensor-based Human Activity Recognition (HAR), achieving SOTA accuracies of 97.6% on UCI-HAR and 98.8% on UniMiB-SHAR.",
+    image: federated_learning,
+    tags: ["Python", "PyTorch", "Wearables", "HAR", "Conformer", "Transformer"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/MST-Conformer-MultiScale_Temporal_Conformer-for-HAR",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   }
 ];
 

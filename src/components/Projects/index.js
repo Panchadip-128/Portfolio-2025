@@ -26,6 +26,10 @@ const Projects = ({openModal,setOpenModal}) => {
     ? projects 
     : projects.filter((item) => item.category === toggle);
 
+  const row1 = filteredProjects.filter((_, index) => index % 3 === 0);
+  const row2 = filteredProjects.filter((_, index) => index % 3 === 1);
+  const row3 = filteredProjects.filter((_, index) => index % 3 === 2);
+
   return (
     <Container id="projects">
       <Wrapper>
@@ -63,29 +67,35 @@ const Projects = ({openModal,setOpenModal}) => {
       <MarqueeWrapper>
         {filteredProjects.length > 0 && (
           <>
-            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-              {filteredProjects.map((project, index) => (
-                <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                </div>
-              ))}
-            </Marquee>
+            {row1.length > 0 && (
+              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
+                {row1.map((project, index) => (
+                  <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                  </div>
+                ))}
+              </Marquee>
+            )}
 
-            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
-              {filteredProjects.map((project, index) => (
-                <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                </div>
-              ))}
-            </Marquee>
+            {row2.length > 0 && (
+              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
+                {row2.map((project, index) => (
+                  <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                  </div>
+                ))}
+              </Marquee>
+            )}
 
-            <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-              {filteredProjects.map((project, index) => (
-                <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                  <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                </div>
-              ))}
-            </Marquee>
+            {row3.length > 0 && (
+              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
+                {row3.map((project, index) => (
+                  <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                  </div>
+                ))}
+              </Marquee>
+            )}
           </>
         )}
       </MarqueeWrapper>
