@@ -27,8 +27,8 @@ const Projects = ({openModal,setOpenModal}) => {
     : projects.filter((item) => item.category === toggle);
 
   const numProjects = filteredProjects.length;
-  const row1Count = Math.min(numProjects, Math.max(5, Math.ceil(numProjects / 2))); // 5 or more in first row if possible
-  const row2Count = Math.ceil((numProjects - row1Count) / 2);
+  const row1Count = Math.min(numProjects, 5);
+  const row2Count = Math.min(numProjects - row1Count, 5);
   const row1 = filteredProjects.slice(0, row1Count);
   const row2 = filteredProjects.slice(row1Count, row1Count + row2Count);
   const row3 = filteredProjects.slice(row1Count + row2Count);
@@ -83,7 +83,7 @@ const Projects = ({openModal,setOpenModal}) => {
           showMarquee ? (
             <>
               {row1.length > 0 && (
-                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left" autoFill={true}>
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
                   {row1.map((project, index) => (
                     <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
@@ -93,7 +93,7 @@ const Projects = ({openModal,setOpenModal}) => {
               )}
 
               {row2.length > 0 && (
-                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right" autoFill={true}>
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
                   {row2.map((project, index) => (
                     <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
@@ -103,7 +103,7 @@ const Projects = ({openModal,setOpenModal}) => {
               )}
 
               {row3.length > 0 && (
-                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left" autoFill={true}>
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
                   {row3.map((project, index) => (
                     <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
