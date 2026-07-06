@@ -84,7 +84,7 @@ const Projects = ({openModal,setOpenModal}) => {
             <>
               {row1.length > 0 && (
                 <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-                  {getRepeatedItems(row1).map((project, index) => (
+                  {row1.map((project, index) => (
                     <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
                     </div>
@@ -94,7 +94,7 @@ const Projects = ({openModal,setOpenModal}) => {
 
               {row2.length > 0 && (
                 <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
-                  {getRepeatedItems(row2).map((project, index) => (
+                  {row2.map((project, index) => (
                     <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
                     </div>
@@ -104,7 +104,7 @@ const Projects = ({openModal,setOpenModal}) => {
 
               {row3.length > 0 && (
                 <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-                  {getRepeatedItems(row3).map((project, index) => (
+                  {row3.map((project, index) => (
                     <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
                       <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
                     </div>
