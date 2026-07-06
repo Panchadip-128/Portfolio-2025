@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Container, Wrapper, Title, Desc, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
+import { Container, Wrapper, Title, Desc, ToggleButtonGroup, ToggleButton, Divider, CardContainer } from './ProjectsStyle'
 import ProjectCard from '../Cards/ProjectCards'
 import { projects } from '../../data/constants'
 import Marquee from 'react-fast-marquee'
@@ -29,6 +29,17 @@ const Projects = ({openModal,setOpenModal}) => {
   const row1 = filteredProjects.filter((_, index) => index % 3 === 0);
   const row2 = filteredProjects.filter((_, index) => index % 3 === 1);
   const row3 = filteredProjects.filter((_, index) => index % 3 === 2);
+
+  const showMarquee = filteredProjects.length > 3;
+
+  const getRepeatedItems = (items) => {
+    if (items.length === 0) return [];
+    let repeated = [...items];
+    while (repeated.length < 6) {
+      repeated = [...repeated, ...items];
+    }
+    return repeated;
+  };
 
   return (
     <Container id="projects">
@@ -66,37 +77,45 @@ const Projects = ({openModal,setOpenModal}) => {
       
       <MarqueeWrapper>
         {filteredProjects.length > 0 && (
-          <>
-            {row1.length > 0 && (
-              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-                {row1.map((project, index) => (
-                  <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                  </div>
-                ))}
-              </Marquee>
-            )}
+          showMarquee ? (
+            <>
+              {row1.length > 0 && (
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
+                  {getRepeatedItems(row1).map((project, index) => (
+                    <div key={`row1-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                      <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                    </div>
+                  ))}
+                </Marquee>
+              )}
 
-            {row2.length > 0 && (
-              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
-                {row2.map((project, index) => (
-                  <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                  </div>
-                ))}
-              </Marquee>
-            )}
+              {row2.length > 0 && (
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="right">
+                  {getRepeatedItems(row2).map((project, index) => (
+                    <div key={`row2-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                      <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                    </div>
+                  ))}
+                </Marquee>
+              )}
 
-            {row3.length > 0 && (
-              <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
-                {row3.map((project, index) => (
-                  <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
-                    <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-                  </div>
-                ))}
-              </Marquee>
-            )}
-          </>
+              {row3.length > 0 && (
+                <Marquee speed={80} pauseOnHover={true} gradient={false} direction="left">
+                  {getRepeatedItems(row3).map((project, index) => (
+                    <div key={`row3-${project.id}-${index}`} style={{ margin: '0 20px', padding: '40px 20px' }}>
+                      <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+                    </div>
+                  ))}
+                </Marquee>
+              )}
+            </>
+          ) : (
+            <CardContainer style={{ padding: '0 20px 100px 20px' }}>
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} setOpenModal={setOpenModal} />
+              ))}
+            </CardContainer>
+          )
         )}
       </MarqueeWrapper>
     </Container>
