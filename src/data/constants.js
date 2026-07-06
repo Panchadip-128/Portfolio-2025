@@ -726,6 +726,28 @@ export const projects = [
     category: "machine learning",
     github: "https://github.com/Panchadip-128/MST-Conformer-MultiScale_Temporal_Conformer-for-HAR",
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 10,
+    title: "Visual-Question-and-Answering-Model-using-BLIP-CLIP",
+    date: "2024",
+    description: "A Visual Question Answering (VQA) model built using the BLIP and CLIP framework. Extracts visual and textual embeddings to answer questions related to provided images, deployed via Gradio.",
+    image: vqa_img,
+    tags: ["Python", "VQA", "BLIP", "CLIP", "Gradio"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Visual-Question-and-Answering-Model-using-BLIP-CLIP",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 11,
+    title: "Optimizing-Edge-Resource-Management-using-Deep-Reinforcement-Learning",
+    date: "2024",
+    description: "Quantum Key Distribution (QKD) resource management optimization using a Double Deep Q-Network (DDQN) for edge resource allocation, minimizing latency and maximizing secure key rates.",
+    image: RL_Logo,
+    tags: ["Python", "DDQN", "Reinforcement Learning", "QKD", "Edge Computing"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/-Optimizing-Edge-Resource-Management-using-Deep-Reinforcement-Learning-A-Comparative-Study-of-DQN-",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   }
 ];
 
