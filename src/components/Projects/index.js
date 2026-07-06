@@ -27,8 +27,8 @@ const Projects = ({openModal,setOpenModal}) => {
     : projects.filter((item) => item.category === toggle);
 
   const numProjects = filteredProjects.length;
-  const row1Count = Math.min(numProjects, 5);
-  const row2Count = Math.min(numProjects - row1Count, 5);
+  const row1Count = Math.ceil(numProjects / 3);
+  const row2Count = Math.ceil((numProjects - row1Count) / 2);
   const row1 = filteredProjects.slice(0, row1Count);
   const row2 = filteredProjects.slice(row1Count, row1Count + row2Count);
   const row3 = filteredProjects.slice(row1Count + row2Count);
