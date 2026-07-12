@@ -13,10 +13,11 @@ import * as blog1 from './blog-1-deep-rl.js';
 import * as blog2 from './blog-2-llm-agents.js';
 import * as blog3 from './blog-3-federated-learning.js';
 // ADD NEW BLOG IMPORTS HERE ↓
-// import * as blog4 from './blog-4-my-new-post.js';
+import * as blog4 from './blog-4-amazon-mlss.js';
 
 // Newest posts first — reorder this array to change display order
 export const blogs = [
+  { ...blog4.meta, content: blog4.content },
   { ...blog1.meta, content: blog1.content },
   { ...blog2.meta, content: blog2.content },
   { ...blog3.meta, content: blog3.content },
