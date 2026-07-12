@@ -227,9 +227,9 @@ const NotFound = styled.div`
 
 // ─── Inline markdown parser ───────────────────────────────────────
 function parseInline(text, key = 0) {
-  // Handle bold+italic, bold, italic, inline code, links
+  // Handle bold+italic, bold, italic, inline code, images, links
   const parts = [];
-  const re = /(\*\*\*(.+?)\*\*\*|\*\*(.+?)\*\*|\*(.+?)\*|`([^`]+)`|\[([^\]]+)\]\(([^)]+)\))/g;
+  const re = /(\*\*\*(.+?)\*\*\*|\*\*(.+?)\*\*|\*(.+?)\*|`([^`]+)`|!\[([^\]]*)\]\(([^)]+)\)|\[([^\]]+)\]\(([^)]+)\))/g;
   let last = 0, m, idx = 0;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
@@ -237,7 +237,8 @@ function parseInline(text, key = 0) {
     else if (m[3]) parts.push(<strong key={idx++}>{m[3]}</strong>);
     else if (m[4]) parts.push(<em key={idx++} style={{ color: 'inherit', fontStyle: 'italic' }}>{m[4]}</em>);
     else if (m[5]) parts.push(<InlineCode key={idx++}>{m[5]}</InlineCode>);
-    else if (m[6]) parts.push(<a key={idx++} href={m[7]} target="_blank" rel="noopener noreferrer" style={{ color: '#854CE6', textDecoration: 'none' }}>{m[6]}</a>);
+    else if (m[7]) parts.push(<img key={idx++} src={m[7]} alt={m[6]} style={{ maxWidth: '100%', borderRadius: '8px', margin: '20px 0' }} />);
+    else if (m[8]) parts.push(<a key={idx++} href={m[9]} target="_blank" rel="noopener noreferrer" style={{ color: '#854CE6', textDecoration: 'none' }}>{m[8]}</a>);
     last = re.lastIndex;
   }
   if (last < text.length) parts.push(text.slice(last));
