@@ -331,12 +331,27 @@ function MarkdownRenderer({ content }) {
 
     // Paragraph
     const paraLines = [];
-    while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !lines[i].startsWith('>') && !lines[i].startsWith('```') && !lines[i].startsWith('|') && !lines[i].match(/^[-*+] /) && !lines[i].match(/^\d+\. /) && lines[i].trim() !== '---') {
+    while (
+      i < lines.length &&
+      lines[i].trim() !== '' &&
+      !lines[i].match(/^#{1,6} /) &&
+      !lines[i].startsWith('> ') &&
+      !lines[i].startsWith('```') &&
+      !(lines[i].includes('|') && lines[i + 1] && lines[i + 1].match(/^\|[-| :]+\|$/)) &&
+      !lines[i].match(/^[-*+] /) &&
+      !lines[i].match(/^\d+\. /) &&
+      lines[i].trim() !== '---' &&
+      lines[i].trim() !== '***'
+    ) {
       paraLines.push(lines[i]);
       i++;
     }
     if (paraLines.length > 0) {
       blocks.push(<Para key={i}>{parseInline(paraLines.join(' '))}</Para>);
+    } else {
+      // Failsafe: if we hit a weird edge case, just render it and move on to prevent infinite loop
+      blocks.push(<Para key={i}>{parseInline(lines[i])}</Para>);
+      i++;
     }
   }
 
