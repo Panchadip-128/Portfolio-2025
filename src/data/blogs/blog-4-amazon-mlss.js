@@ -3,7 +3,7 @@ export const meta = {
   title: "Selected for Amazon ML Summer School 2026",
   date: "July 2026",
   readTime: "2 min read",
-  coverImage: "/blog-images/amzn_mlss26.png",
+  coverImage: "/blog-images/amazon_neon_cover.png",
   tags: ["Amazon", "Machine Learning", "Achievement"],
   excerpt: "Thrilled to be among the 3,000 selected for the Amazon ML Summer School 2026 out of 134,000 applicants!",
 };
@@ -21,6 +21,10 @@ To be part of this exclusive top ~2.2% is a tremendous honor and a massive valid
 I am super excited to dive deep into advanced ML concepts, learn directly from top scientists at Amazon, and interact with some of the brightest minds in the country. A huge thank you to the Amazon ML Summer School team for this phenomenal opportunity!
 
 Looking forward to making the absolute most out of these sessions! 🚀
+
+---
+
+![Amazon ML Summer School Acceptance](/blog-images/amzn_mlss26.png)
 
 #Amazon #MachineLearning #AI #AmazonMLSummerSchool #MLSS2026 #Achievement #DeepLearning
 `;
