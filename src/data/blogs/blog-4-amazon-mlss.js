@@ -3,7 +3,7 @@ export const meta = {
   title: "Selected for Amazon ML Summer School 2026",
   date: "July 2026",
   readTime: "2 min read",
-  coverImage: "/blog-images/amazon_neon_cover.png",
+  coverImage: "/blog-images/amazon_ml_summer_school_real.png",
   tags: ["Amazon", "Machine Learning", "Achievement"],
   excerpt: "Thrilled to be among the 3,000 selected for the Amazon ML Summer School 2026 out of 134,000 applicants!",
 };
