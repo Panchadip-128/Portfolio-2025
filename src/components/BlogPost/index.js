@@ -22,7 +22,8 @@ const Container = styled.div`
 const CoverImage = styled(motion.img)`
   width: 100%;
   height: 60vh;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #0b0b10;
   @media (max-width: 768px) { height: 40vh; }
 `;
 
