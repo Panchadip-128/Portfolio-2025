@@ -76,7 +76,7 @@ const HeroSection = () => {
                             </RolesContainer>
                             <SubTitle variants={fadeUp}>{Bio.description}</SubTitle>
                             <motion.div variants={fadeUp}>
-                                <ResumeButton as="button" onClick={handleResumeClick}>View Resume</ResumeButton>
+                                <ResumeButton href="#" onClick={handleResumeClick}>View Resume</ResumeButton>
                             </motion.div>
                         </HeroLeftContainer>
 
