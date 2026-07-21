@@ -221,7 +221,7 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_PLUNK_API_KEY}`,
+          Authorization: "Bearer sk_40d5dcbb0338dc865bdb796023af1c0e44192f49c6f3976c",
         },
         body: JSON.stringify(emailData),
       });
