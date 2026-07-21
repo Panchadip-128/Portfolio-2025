@@ -310,7 +310,7 @@ const FeedbackPage = () => {
   return (
     <PageContainer>
       <div style={{ width: '100%', maxWidth: '600px' }}>
-        <BackButton onClick={() => navigate('/')}>
+        <BackButton as="a" href="/" style={{ textDecoration: 'none' }}>
           <FaArrowLeft /> Go Back
         </BackButton>
       </div>

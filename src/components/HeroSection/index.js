@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HeroContainer, HeroBg, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, Title, SubTitle, ResumeButton, RolesContainer, RoleBadge, TextLoop, Span } from './HeroStyle'
 import HeroImg from '../../images/HeroImage.jpg'
 import { Bio } from '../../data/constants';
@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import HeroBgAnimation from '../HeroBgAnimation';
+import { Snackbar, Alert } from '@mui/material';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -33,6 +34,13 @@ const HeroWrapper = styled.div`
 `;
 
 const HeroSection = () => {
+    const [openAlert, setOpenAlert] = useState(false);
+
+    const handleResumeClick = (e) => {
+        e.preventDefault();
+        setOpenAlert(true);
+    };
+
     return (
         <HeroWrapper id="about">
             <HeroContainer>
@@ -67,7 +75,7 @@ const HeroSection = () => {
                         </RolesContainer>
                         <SubTitle variants={fadeUp}>{Bio.description}</SubTitle>
                         <motion.div variants={fadeUp}>
-                            <ResumeButton href={Bio.resume} target='_blank'>View Resume</ResumeButton>
+                            <ResumeButton as="button" onClick={handleResumeClick}>View Resume</ResumeButton>
                         </motion.div>
                     </HeroLeftContainer>
 
@@ -85,6 +93,17 @@ const HeroSection = () => {
                     </HeroRightContainer>
                 </HeroInnerContainer>
             </HeroContainer>
+
+            <Snackbar
+                open={openAlert}
+                autoHideDuration={6000}
+                onClose={() => setOpenAlert(false)}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            >
+                <Alert onClose={() => setOpenAlert(false)} severity="warning" sx={{ width: '100%', fontSize: '15px' }}>
+                    Access Restricted: Oh no! The resume is currently undergoing a fruitful restructuring. Please check back in a few days!
+                </Alert>
+            </Snackbar>
         </HeroWrapper>
     )
 }
