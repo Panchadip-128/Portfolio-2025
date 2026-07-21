@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { FaArrowUp, FaEnvelope, FaGithub, FaLinkedin, FaBell } from 'react-icons/fa';
+import { FaArrowUp, FaEnvelope, FaGithub, FaLinkedin, FaBell, FaCommentAlt } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
 import { recentUpdates } from '../../data/constants';
 import UpdatesPopup from '../UpdatesPopup';
@@ -257,6 +257,19 @@ const FloatingActions = () => {
         </ButtonWrapper>
 
         {/* Social Media Links */}
+        <ButtonWrapper>
+          <SocialButton 
+            href="/feedback" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            social="feedback"
+            style={{ background: 'linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%)' }}
+          >
+            <FaCommentAlt />
+          </SocialButton>
+          <Tooltip>Feedback</Tooltip>
+        </ButtonWrapper>
+
         <ButtonWrapper>
           <SocialButton 
             href={Bio.github} 

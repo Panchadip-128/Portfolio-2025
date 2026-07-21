@@ -748,6 +748,39 @@ export const projects = [
     category: "machine learning",
     github: "https://github.com/Panchadip-128/-Optimizing-Edge-Resource-Management-using-Deep-Reinforcement-Learning-A-Comparative-Study-of-DQN-",
     member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 12,
+    title: "Waste-Classification-using-DL-techniques",
+    date: "2023",
+    description: "Used various Deep Learning models (ANN, Basic CNN, VGG16, ResNet, MobileNetV2) to facilitate the process of waste classification and compared rigorous metrics for efficient results.",
+    image: tech_img,
+    tags: ["Python", "TensorFlow", "OpenCV", "CNN", "MobileNetV2"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Waste-Classification-using-DL-techniques",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 13,
+    title: "Quantum-Circuit-Probability-Prediction",
+    date: "2024",
+    description: "The Quantum Circuit Probability Predictor is a machine learning-based application designed to predict the probability of measuring a specific quantum state using Neural Networks and Transformers.",
+    image: deepfake,
+    tags: ["Python", "Qiskit", "Transformers", "Quantum ML", "PyTorch"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Quantum-Circuit-Probability-Prediction-using-Neural-Networks-and-Transformers",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
+  },
+  {
+    id: 14,
+    title: "Image_Captioning_Application",
+    date: "2024",
+    description: "This project showcases the use of the BLIP model from Salesforce for image captioning, integrated into a Streamlit web application. Analyzes text input sentiment and provides captions for uploaded images.",
+    image: vqa_img,
+    tags: ["Python", "Flask", "Streamlit", "Hugging Face", "BLIP"],
+    category: "machine learning",
+    github: "https://github.com/Panchadip-128/Image_Captioning_Application",
+    member: [{ name: "Panchadip", img: hero_img, linkedin: "https://www.linkedin.com/in/panchadip-bhattacharya-192388228/", github: "https://github.com/Panchadip-128" }]
   }
 ];
 

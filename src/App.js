@@ -30,6 +30,7 @@ import BlogListing from './components/BlogListing';
 import BlogPost from './components/BlogPost';
 import CustomCursor from './components/CustomCursor';
 import PublicationDetails from "./components/PublicationDetails";
+import FeedbackPage from './components/Feedback';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -183,6 +184,14 @@ function App() {
               <Body>
                 <BlogPost />
                 <Footer />
+              </Body>
+            </>
+          } />
+          <Route path="/feedback" element={
+            <>
+              <Navbar />
+              <Body>
+                <FeedbackPage />
               </Body>
             </>
           } />

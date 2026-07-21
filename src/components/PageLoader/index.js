@@ -86,11 +86,21 @@ const PageLoader = ({ onLoadComplete }) => {
     return () => clearTimeout(timer);
   }, [onLoadComplete]);
 
+  const isFeedback = window.location.pathname.includes('/feedback');
+  
+  const loadingTitle = isFeedback 
+    ? "Warming up the feedback engine..." 
+    : "Loading Portfolio";
+    
+  const loadingSubtitle = isFeedback 
+    ? "Getting everything ready to hear your amazing thoughts 🚀" 
+    : "Preparing an amazing experience for you...";
+
   return (
     <LoaderContainer fadeOut={fadeOut}>
       <LoaderSpinner />
-      <LoaderText>Loading Portfolio</LoaderText>
-      <LoaderSubtext>Preparing an amazing experience for you...</LoaderSubtext>
+      <LoaderText>{loadingTitle}</LoaderText>
+      <LoaderSubtext>{loadingSubtitle}</LoaderSubtext>
       <ProgressContainer>
         <ProgressBar />
       </ProgressContainer>

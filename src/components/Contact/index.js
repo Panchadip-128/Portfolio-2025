@@ -195,6 +195,16 @@ const Contact = () => {
       return;
     }
 
+    const lastContactSubmission = localStorage.getItem('lastContactSubmission');
+    if (lastContactSubmission) {
+      const now = new Date().getTime();
+      const lastTime = parseInt(lastContactSubmission, 10);
+      if (now - lastTime < 60000) {
+        setAlert({ message: "Rate limit exceeded. Please wait 60 seconds before sending another message.", success: false });
+        return;
+      }
+    }
+
     const emailData = {
       to: "panchadip125@gmail.com",
       subject: subject,
@@ -211,12 +221,13 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer sk_40d5dcbb0338dc865bdb796023af1c0e44192f49c6f3976c",
+          Authorization: `Bearer ${process.env.REACT_APP_PLUNK_API_KEY}`,
         },
         body: JSON.stringify(emailData),
       });
 
       if (response.ok) {
+        localStorage.setItem('lastContactSubmission', new Date().getTime().toString());
         setAlert({ message: "Email sent successfully!", success: true });
         form.current.reset();
       } else {
