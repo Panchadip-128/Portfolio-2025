@@ -241,6 +241,7 @@ const FeedbackPage = () => {
     const email = formData.get('email');
     const org = formData.get('organization');
     const role = formData.get('role');
+    const project = formData.get('project');
     const testimonial = formData.get('testimonial');
 
     if (!name || !email || !role || !testimonial) {
@@ -270,6 +271,7 @@ const FeedbackPage = () => {
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Organization:</strong> ${org || 'Not provided'}</p>
           <p><strong>Role:</strong> ${role}</p>
+          <p><strong>Project Worked On / Subject:</strong> ${project || 'N/A'}</p>
           <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
           <h3 style="color: #555;">Message / Testimonial:</h3>
           <p style="white-space: pre-wrap; color: #444; line-height: 1.5;">${testimonial}</p>
@@ -308,7 +310,7 @@ const FeedbackPage = () => {
   return (
     <PageContainer>
       <div style={{ width: '100%', maxWidth: '600px' }}>
-        <BackButton onClick={() => navigate(-1)}>
+        <BackButton onClick={() => navigate('/')}>
           <FaArrowLeft /> Go Back
         </BackButton>
       </div>
@@ -346,6 +348,11 @@ const FeedbackPage = () => {
               <option value="Client / Employer">Client / Employer</option>
               <option value="Friend / Other">Friend / Other</option>
             </Select>
+          </InputGroup>
+
+          <InputGroup>
+            <Label>Project Worked On / Subject (Optional)</Label>
+            <Input type="text" name="project" placeholder="e.g. LLM Research, Web App, General" />
           </InputGroup>
 
           <InputGroup>
