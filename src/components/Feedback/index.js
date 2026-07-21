@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaCommentAlt, FaSpinner, FaArrowLeft } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -37,7 +37,7 @@ const PageContainer = styled.div`
   }
 `;
 
-const BackButton = styled.button`
+const BackButton = styled(Link)`
   align-self: flex-start;
   background: transparent;
   border: none;
@@ -49,7 +49,10 @@ const BackButton = styled.button`
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  text-decoration: none;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
   
   &:hover {
     color: ${({ theme }) => theme.text_primary};
@@ -310,7 +313,7 @@ const FeedbackPage = () => {
   return (
     <PageContainer>
       <div style={{ width: '100%', maxWidth: '600px' }}>
-        <BackButton as="a" href="/" style={{ textDecoration: 'none' }}>
+        <BackButton to="/">
           <FaArrowLeft /> Go Back
         </BackButton>
       </div>
