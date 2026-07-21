@@ -42,69 +42,72 @@ const HeroSection = () => {
     };
 
     return (
-        <HeroWrapper id="about">
-            <HeroContainer>
-                <HeroBg>
-                    <HeroBgAnimation />
-                </HeroBg>
-                <HeroInnerContainer>
-                    <HeroLeftContainer id="Left"
-                        variants={staggerContainer}
-                        initial="hidden"
-                        animate="show"
-                    >
-                        <Title variants={fadeUp}>Panchadip<br/>Bhattacharjee</Title>
-                        <motion.div variants={fadeUp}>
-                            <TextLoop>
-                                I am a
-                                <Span>
-                                    <Typewriter
-                                        options={{
-                                            strings: Bio.roles,
-                                            autoStart: true,
-                                            loop: true,
-                                        }}
-                                    />
-                                </Span>
-                            </TextLoop>
-                        </motion.div>
-                        <RolesContainer variants={fadeUp}>
-                            {Bio.roles.slice(0, 4).map((role, idx) => (
-                                <RoleBadge key={idx}>{role}</RoleBadge>
-                            ))}
-                        </RolesContainer>
-                        <SubTitle variants={fadeUp}>{Bio.description}</SubTitle>
-                        <motion.div variants={fadeUp}>
-                            <ResumeButton as="button" onClick={handleResumeClick}>View Resume</ResumeButton>
-                        </motion.div>
-                    </HeroLeftContainer>
+        <>
+            <HeroWrapper id="about">
+                <HeroContainer>
+                    <HeroBg>
+                        <HeroBgAnimation />
+                    </HeroBg>
+                    <HeroInnerContainer>
+                        <HeroLeftContainer id="Left"
+                            variants={staggerContainer}
+                            initial="hidden"
+                            animate="show"
+                        >
+                            <Title variants={fadeUp}>Panchadip<br/>Bhattacharjee</Title>
+                            <motion.div variants={fadeUp}>
+                                <TextLoop>
+                                    I am a
+                                    <Span>
+                                        <Typewriter
+                                            options={{
+                                                strings: Bio.roles,
+                                                autoStart: true,
+                                                loop: true,
+                                            }}
+                                        />
+                                    </Span>
+                                </TextLoop>
+                            </motion.div>
+                            <RolesContainer variants={fadeUp}>
+                                {Bio.roles.slice(0, 4).map((role, idx) => (
+                                    <RoleBadge key={idx}>{role}</RoleBadge>
+                                ))}
+                            </RolesContainer>
+                            <SubTitle variants={fadeUp}>{Bio.description}</SubTitle>
+                            <motion.div variants={fadeUp}>
+                                <ResumeButton as="button" onClick={handleResumeClick}>View Resume</ResumeButton>
+                            </motion.div>
+                        </HeroLeftContainer>
 
-                    <HeroRightContainer id="Right"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <Img 
-                            src={HeroImg} 
-                            alt="Panchadip Bhattacharjee" 
-                            animate={{ y: [0, -15, 0] }}
-                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                        />
-                    </HeroRightContainer>
-                </HeroInnerContainer>
-            </HeroContainer>
+                        <HeroRightContainer id="Right"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <Img 
+                                src={HeroImg} 
+                                alt="Panchadip Bhattacharjee" 
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                            />
+                        </HeroRightContainer>
+                    </HeroInnerContainer>
+                </HeroContainer>
+            </HeroWrapper>
 
             <Snackbar
                 open={openAlert}
                 autoHideDuration={6000}
                 onClose={() => setOpenAlert(false)}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                style={{ zIndex: 99999 }}
             >
                 <Alert onClose={() => setOpenAlert(false)} severity="warning" sx={{ width: '100%', fontSize: '15px' }}>
                     Access Restricted: Oh no! The resume is currently undergoing a fruitful restructuring. Please check back in a few days!
                 </Alert>
             </Snackbar>
-        </HeroWrapper>
+        </>
     )
 }
 
