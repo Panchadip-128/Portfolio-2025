@@ -70,7 +70,7 @@ export const recentUpdates = [
     isNew: true,
     image: ieee_conecct_award,
     tags: ["Research", "IEEE CONECCT", "Publications"],
-    link: "#"
+    link: "/blog/5"
   },
   {
     id: 3,
@@ -173,29 +173,29 @@ export const skills = [
   {
     title: "Artificial Intelligence & GenAI",
     skills: [
-      { name: "Llama Models", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_AI_logo.svg/1024px-Meta_AI_logo.svg.png" },
-      { name: "Google Gemini", image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" },
-      { name: "GPT / OpenAI", image: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
-      { name: "HuggingFace", image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
+      { name: "Llama Models", image: "https://cdn.simpleicons.org/meta/0668E1" },
+      { name: "Google Gemini", image: "https://cdn.simpleicons.org/googlegemini/4285F4" },
+      { name: "GPT / OpenAI", image: "https://cdn.simpleicons.org/openai/white" },
+      { name: "HuggingFace", image: "https://cdn.simpleicons.org/huggingface/FFD21E" },
       { name: "LangChain", image: langchain_logo },
-      { name: "RAG Pipelines", image: "https://cdn-icons-png.flaticon.com/512/2814/2814666.png" },
-      { name: "AI Agents", image: "https://cdn-icons-png.flaticon.com/512/4333/4333555.png" },
-      { name: "Prompt Engineering", image: "https://cdn-icons-png.flaticon.com/512/10006/10006841.png" },
-      { name: "Vector Databases", image: "https://cdn-icons-png.flaticon.com/512/5110/5110904.png" },
-      { name: "Model Fine-Tuning", image: "https://cdn-icons-png.flaticon.com/512/8067/8067981.png" },
-      { name: "MCP Protocol", image: "https://cdn-icons-png.flaticon.com/512/3261/3261308.png" }
+      { name: "RAG Pipelines", image: "https://img.icons8.com/color/48/000000/data-configuration.png" },
+      { name: "AI Agents", image: "https://img.icons8.com/color/48/000000/bot.png" },
+      { name: "Prompt Engineering", image: "https://img.icons8.com/color/48/000000/console.png" },
+      { name: "Vector Databases", image: "https://img.icons8.com/color/48/000000/database.png" },
+      { name: "Model Fine-Tuning", image: "https://img.icons8.com/color/48/000000/settings.png" },
+      { name: "MCP Protocol", image: "https://img.icons8.com/color/48/000000/network-cable.png" }
     ],
   },
   {
     title: "Data Science & Machine Learning",
     skills: [
       { name: "Python", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-      { name: "TensorFlow", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/2048px-Tensorflow_logo.svg.png" },
-      { name: "PyTorch", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" },
-      { name: "Scikit-Learn", image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+      { name: "TensorFlow", image: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
+      { name: "PyTorch", image: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
+      { name: "Scikit-Learn", image: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
       { name: "Pandas", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" },
       { name: "NumPy", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" },
-      { name: "Matplotlib", image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" },
+      { name: "Matplotlib", image: "https://img.icons8.com/color/48/000000/line-chart.png" },
       { name: "Seaborn", image: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" },
       { name: "XGBoost", image: "https://avatars.githubusercontent.com/u/17173059?s=200&v=4" }
     ],
@@ -215,12 +215,12 @@ export const skills = [
   {
     title: "Frontend",
     skills: [
-      { name: "React Js", image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
-      { name: "Next Js", image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
+      { name: "React Js", image: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Next Js", image: "https://cdn.simpleicons.org/nextdotjs/white" },
       { name: "TypeScript", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
-      { name: "JavaScript", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" },
+      { name: "JavaScript", image: "https://cdn.simpleicons.org/javascript/F7DF1E" },
       { name: "HTML", image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" },
-      { name: "CSS", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" },
+      { name: "CSS", image: "https://cdn.simpleicons.org/css3/1572B6" },
       { name: "Bootstrap", image: "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" },
       { name: "Material UI", image: "https://mui.com/static/logo.png" }
     ],
@@ -244,17 +244,17 @@ export const skills = [
       { name: "GitHub", image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
       { name: "Docker", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" },
       { name: "Postman API", image: postman_logo },
-      { name: "VS Code", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519" },
-      { name: "Linux", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" }
+      { name: "VS Code", image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" },
+      { name: "Linux", image: "https://cdn.simpleicons.org/linux/white" }
     ],
   },
   {
     title: "Cybersecurity",
     skills: [
-      { name: "Kali Linux", image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kali_Linux_2.0_wordmark.svg" },
-      { name: "Metasploit", image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Metasploit_logo.svg" },
-      { name: "Ethical Hacking", image: "https://cdn-icons-png.flaticon.com/512/3233/3233483.png" },
-      { name: "CTF", image: "https://cdn-icons-png.flaticon.com/512/11263/11263077.png" }
+      { name: "Kali Linux", image: "https://cdn.simpleicons.org/kalilinux/557C94" },
+      { name: "Metasploit", image: "https://img.icons8.com/color/48/000000/bug.png" },
+      { name: "Ethical Hacking", image: "https://img.icons8.com/color/48/000000/hacker.png" },
+      { name: "CTF", image: "https://img.icons8.com/color/48/000000/flag.png" }
     ],
   }
 ];

@@ -14,9 +14,11 @@ import * as blog2 from './blog-2-llm-agents.js';
 import * as blog3 from './blog-3-federated-learning.js';
 // ADD NEW BLOG IMPORTS HERE ↓
 import * as blog4 from './blog-4-amazon-mlss.js';
+import * as blog5 from './blog-5-ieee-conecct.js';
 
 // Newest posts first — reorder this array to change display order
 export const blogs = [
+  { ...blog5.meta, content: blog5.content },
   { ...blog4.meta, content: blog4.content },
   { ...blog1.meta, content: blog1.content },
   { ...blog2.meta, content: blog2.content },

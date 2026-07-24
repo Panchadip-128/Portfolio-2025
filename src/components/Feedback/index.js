@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaCommentAlt, FaSpinner, FaArrowLeft } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
+import cover_img from '../../images/feedback_cover_bg.png';
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -12,11 +13,11 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: calc(100vh - 80px); /* Adjusting for navbar */
-  padding: 40px 20px;
   position: relative;
   z-index: 1;
+  background-color: ${({ theme }) => theme.bg};
+  padding-bottom: 80px;
   
   &::before {
     content: '';
@@ -34,6 +35,17 @@ const PageContainer = styled.div`
     z-index: -1;
     mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+`;
+
+const CoverImage = styled.img`
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  @media (max-width: 768px) {
+    height: 250px;
   }
 `;
 
@@ -61,18 +73,23 @@ const BackButton = styled(Link)`
 `;
 
 const FormCard = styled.div`
-  width: 100%;
-  max-width: 600px;
+  width: 92%;
+  max-width: 650px;
   background-color: ${({ theme }) => theme.card};
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  border: 1px solid ${({ theme }) => theme.primary}30;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid ${({ theme }) => theme.primary}50;
+  margin-top: -150px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
   animation: ${fadeIn} 0.5s ease;
   
   @media (max-width: 768px) {
     padding: 30px 20px;
     border-radius: 16px;
+    margin-top: -80px;
   }
 `;
 
@@ -187,6 +204,15 @@ const TextArea = styled.textarea`
   &::placeholder {
     color: ${({ theme }) => theme.text_secondary}80;
   }
+`;
+
+const ThankYouMessage = styled.p`
+  color: ${({ theme }) => theme.text_secondary};
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0 15px 0;
+  font-style: italic;
+  line-height: 1.5;
 `;
 
 const SubmitButton = styled.button`
@@ -312,13 +338,12 @@ const FeedbackPage = () => {
 
   return (
     <PageContainer>
-      <div style={{ width: '100%', maxWidth: '600px' }}>
+      <CoverImage src={cover_img} alt="Feedback Cover" />
+      <FormCard>
         <BackButton to="/">
           <FaArrowLeft /> Go Back
         </BackButton>
-      </div>
-      
-      <FormCard>
+        
         <Title>
           <FaCommentAlt color="#DA22FF" /> Share Feedback
         </Title>
@@ -346,7 +371,7 @@ const FeedbackPage = () => {
             <Label>Your Role *</Label>
             <Select name="role" required defaultValue="">
               <option value="" disabled hidden>Select your role...</option>
-              <option value="Student / Mentee">Student / Mentee</option>
+              <option value="Mentee">Mentee</option>
               <option value="Coworker / Colleague">Coworker / Colleague</option>
               <option value="Client / Employer">Client / Employer</option>
               <option value="Friend / Other">Friend / Other</option>
@@ -374,6 +399,10 @@ const FeedbackPage = () => {
               'Submit Feedback'
             )}
           </SubmitButton>
+          
+          <ThankYouMessage>
+            Thank you so much for taking the time to share your thoughts! I am truly grateful for your insights and support. Every piece of feedback, suggestion, or kind word means the absolute world to me and deeply helps me on my journey. I truly appreciate you taking the time to write this! ✨
+          </ThankYouMessage>
           
           <style>
             {`

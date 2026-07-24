@@ -21,22 +21,26 @@ const Container = styled.div`
 
 const CoverImage = styled(motion.img)`
   width: 100%;
-  height: auto;
+  height: 450px;
+  object-fit: cover;
   display: block;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 `;
 
 const ContentWrapper = styled(motion.div)`
   max-width: 820px;
   width: 100%;
   padding: 60px 28px 0;
-  margin-top: -80px;
+  margin-top: -140px;
   position: relative;
   z-index: 2;
   background: ${({ theme }) => theme.bg};
   border-radius: 16px 16px 0 0;
   box-shadow: 0 -20px 40px rgba(0,0,0,0.3);
-  @media (max-width: 768px) { margin-top: -40px; padding: 40px 16px 0; }
+  @media (max-width: 768px) { margin-top: -80px; padding: 40px 16px 0; }
 `;
 
 const BackButton = styled.button`
